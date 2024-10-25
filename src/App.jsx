@@ -1,4 +1,4 @@
-import { Routing } from './router/Routing'
+import { Routing } from './router/Routing.jsx'
 
 function App() {
 
