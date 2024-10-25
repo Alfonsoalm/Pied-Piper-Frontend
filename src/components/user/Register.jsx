@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useForm } from "../../hooks/useForm";
-import { Global } from "../../helpers/Global";
+import { useForm } from "../../hooks/useForm.jsx";
+import { Global } from "../../helpers/Global.jsx";
 
 
 export const Register = () => {

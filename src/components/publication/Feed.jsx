@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import avatar from "../../assets/img/user.png";
 import { Link, useParams } from "react-router-dom";
-import { Global } from "../../helpers/Global";
-import useAuth from "../../hooks/useAuth";
-import { PublicationList } from "../publication/PublicationList";
+import { Global } from "../../helpers/Global.jsx";
+import useAuth from "../../hooks/useAuth.jsx";
+import { PublicationList } from "../publication/PublicationList.jsx";
 
 export const Feed = () => {
   const { auth } = useAuth();

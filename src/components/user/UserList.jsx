@@ -1,7 +1,7 @@
 import React from "react";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../../hooks/useAuth.jsx";
 import avatar from "../../assets/img/user.png";
-import { Global } from "../../helpers/Global";
+import { Global } from "../../helpers/Global.jsx";
 import { Link } from "react-router-dom";
 import ReactTimeAgo from "react-time-ago";
 
@@ -109,7 +109,7 @@ export const UserList = ({
                       href="#"
                       className="user-info__create-date">
                       {user.created_at ? (
-                        <ReactTimeAgo date={user.created_at} locale="es-ES" />
+                        <ReactTimeAgo date={parseInt(user.created_at)} locale="es-ES" />
                       ) : (
                         <p>Sin fecha</p>
                       )}

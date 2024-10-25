@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import useAuth from "../../hooks/useAuth";
-import { Global } from "../../helpers/Global";
+import useAuth from "../../hooks/useAuth.jsx";
+import { Global } from "../../helpers/Global.jsx";
 import avatar from '../../assets/img/user.png';
-import { SerializeForm } from "../../helpers/SerializeForm";
+import { SerializeForm } from "../../helpers/SerializeForm.jsx";
 
 
 export const Config = () => {

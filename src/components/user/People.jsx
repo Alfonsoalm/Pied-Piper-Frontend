@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Global } from "../../helpers/Global";
-import { UserList } from "./UserList";
-import useAuth from "../../hooks/useAuth";
+import { Global } from "../../helpers/Global.jsx";
+import { UserList } from "./UserList.jsx";
+import useAuth from "../../hooks/useAuth.jsx";
 
 export const People = () => {
 

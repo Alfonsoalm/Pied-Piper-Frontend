@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import avatar from "../../assets/img/user.png";
 import { Link, useParams } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
-import { Global } from "../../helpers/Global";
+import useAuth from "../../hooks/useAuth.jsx";
+import { Global } from "../../helpers/Global.jsx";
 import ReactTimeAgo from "react-time-ago";
 
-export const PublicationList = ({publications,getPublications,page,setPage,more,setMore,}) => {
+export const PublicationList = ({publications,getPublications,page,setPage,more,setMore}) => {
   const { auth } = useAuth();
 
   const nextPage = () => {
@@ -72,9 +72,8 @@ export const PublicationList = ({publications,getPublications,page,setPage,more,
                       </a>
                       <span className="user-info__divider"> | </span>
                       <a href="#" className="user-info__create-date">
-                        {publication.created_at 
-                        ?
-                        <ReactTimeAgo date={publication.created_at} locale="es-ES"/>
+                        {publication.created_at ?
+                        <ReactTimeAgo date={parseInt(publication.created_at)} locale="es-ES"/>
                         :
                         <p>Sin fecha</p>
                         }
