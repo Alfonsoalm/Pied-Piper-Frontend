@@ -1,0 +1,164 @@
+/*ESTILOS BARRA LATERAL*/
+.layout__aside{
+    grid-area: aside;
+    margin-right: 2rem;
+    
+}
+
+.aside__container{
+    width: 100%;
+    
+}
+
+.aside__profile-info{
+    border: 1px solid var(--color-border-post);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.4rem;
+}
+
+.profile-info__general-info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.general-info__container-avatar{
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 100rem;
+    margin-right: 1.5rem;
+    overflow: hidden;
+}
+
+.container-avatar__img{
+    height: 100%;
+}
+
+.container-names__name{
+    color: var( --color-text-black);
+    font-size: 1.6rem;
+}
+
+.container-names__nickname{
+    color: var( --color-text-nickname);
+    font-size: 1.6rem;
+}
+
+.profile-info__stats{
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid var(--color-border-headers);
+}
+
+.stats__following:first-child{
+    padding-left: 0.6rem;
+}
+
+.stats__following{
+    margin-top: 1rem;
+    padding: 0 1.8rem;
+    border-right: 2px solid var(--color-border-headers);
+    text-align: center;
+}
+
+
+
+.following__title{
+    display: block;
+    font-weight: bold;
+    color: var( --color-text-black);
+}
+
+.following__number{
+    font-weight: bold;
+    color: var(--color-number-stats);
+}
+
+.following__link:hover >  .following__number{
+    color: var(--color-hover-navbar);
+}
+
+
+.aside__container-form{
+    width: 100%;
+    border: 1px solid var(--color-border-post);
+    padding: 2.5rem;
+    border-radius: 0.4rem;
+}
+
+.container-form__form-post{
+    width: 100%;
+}
+
+.aside__container-form form{
+    max-width: 100%;
+}
+
+form{
+    max-width: 300px;
+}
+
+
+
+.form-post__inputs, 
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea{
+    margin-bottom: 1rem;
+}
+
+.form-post__label, label{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.form-post__textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0.6rem 1.2rem;
+    font-size: 14px;
+    color: var( --color-text-black);
+    border: 1px solid var(--color-border-textarea);
+    border-radius: 4px;
+    outline: none;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    transition: all ease-in-out 150ms;
+}
+
+.form-post__textarea:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus
+textarea:focus{
+    border-color: var(--color-border-textarea-focus);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+}
+
+.form-post__image{
+    width: 100%;
+}
+
+
+.form-post__btn-submit,
+input[type="submit"],
+button{
+    background-color: var(--color-background-btn-success);
+    color: var(--color-text-navbar) !important;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border-btn-success);
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    cursor: pointer;
+    font-size: 1.4rem;
+}

@@ -5,78 +5,83 @@ import useAuth from "../../hooks/useAuth.jsx";
 
 export const Login = () => {
   const { form, changed } = useForm({});
-  const [ saved, setSaved ] =useState("not_sended");
-  const {setAuth} = useAuth();
+  const [saved, setSaved] = useState("not_sended");
+  const { setAuth } = useAuth();
 
-  const loginUser = async(e) => {
-
-    // Prevenir actualizacion de pantalla
+  const loginUser = async (e) => {
     e.preventDefault();
-
-    // recoger datos del formulario
     let userToLogin = form;
-
-    // Peticion de login del usuario en el backend
     const request = await fetch(Global.url + "user/login", {
       method: "POST",
       body: JSON.stringify(userToLogin),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      credentials: 'include', // Incluir cookies o credenciales
+      credentials: "include",
     });
-
-    // Persistir los datos en el navegador
-    
-
     const data = await request.json();
     console.log(data);
-    if (data.status == "success"){
+    if (data.status === "success") {
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
-
       setSaved("login");
-
-      //Set datos en el auth
       setAuth(data.user);
-
-      // Redireccion
       setTimeout(() => {
-          window.location.reload();
+        window.location.reload();
       }, 100);
-
-    }else{
+    } else {
       setSaved("error");
     }
-
-    
-  }
-
+  };
 
   return (
     <>
-      <header className="content__header content__header--public">
-        <h1 className="content__title">Login</h1>
+      <header className="login-header">
+        <h1 className="login-title">Login</h1>
       </header>
 
-      <div className="content__posts">
+      <div className="login-content">
+        {saved === "login" && (
+          <strong className="login-alert login-alert--success">
+            Usuario registrado correctamente!
+          </strong>
+        )}
+        {saved === "error" && (
+          <strong className="login-alert login-alert--error">
+            Usuario no se ha registrado correctamente
+          </strong>
+        )}
 
-      {saved == "login" ?  <strong className="alert alert-success">Usuario registrado correctamente !</strong>: ""}
-      {saved == "error" ?  <strong className="alert alert-error"> Usuario no se ha registrado correctamente</strong>: ""}
-
-        <form className="form-login" onSubmit={loginUser}>
-
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input type="text" name="email" onChange={changed} />
+        <form className="login-form" onSubmit={loginUser}>
+          <div className="login-form-group">
+            <label htmlFor="email" className="login-form-label">
+              Email
+            </label>
+            <input
+              type="text"
+              name="email"
+              onChange={changed}
+              className="login-form-input"
+            />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
-            <input type="password" name="password" onChange={changed} />
+          <div className="login-form-group">
+            <label htmlFor="password" className="login-form-label">
+              Contraseña
+            </label>
+            <input
+              type="password"
+              name="password"
+              onChange={changed}
+              className="login-form-input"
+            />
           </div>
 
-          <input type="submit" value="Identificate" className="btn btn-success" />
+          <input
+            type="submit"
+            value="Identificate"
+            className="login-form-button btn-success"
+          />
         </form>
       </div>
     </>

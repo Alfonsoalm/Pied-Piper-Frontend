@@ -13,11 +13,8 @@ export const Config = () => {
 
     // Prevenir actualizacion de pantalla
     e.preventDefault();
-
     // Token de autenticacion
     const token = localStorage.getItem("token");
-
-    
     // recoger datos del formulario
     let newDataUser = SerializeForm(e.target);
 

@@ -1,0 +1,68 @@
+.private-layout {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "content aside";
+    grid-template-columns: 75% 1fr; /* ancho del aside al 25% y el contenido al resto */
+    grid-template-rows: auto 1fr;
+    
+    min-height: 100vh;
+    gap: 2rem;
+    background-color: #f9f9f9;
+}
+
+.layout__navbar {
+    grid-area: header;
+    background-color: var(--color-backgroud-navbar);
+    color: var(--color-text-navbar);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__header {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__icon {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    color: #ffffff;
+}
+
+.navbar__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.private-layout__content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 6rem; /* Ajusta este margen para compensar la altura del header fijo */
+}
+
+.layout__aside {
+    grid-area: aside;
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    border-right: 1px solid #ddd;
+    min-height: calc(100vh - 5.3rem);
+    margin-top: 6rem;
+}

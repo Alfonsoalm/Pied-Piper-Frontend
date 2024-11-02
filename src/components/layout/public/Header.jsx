@@ -6,7 +6,8 @@ export const Header = () => {
     <header className="layout__navbar">
       <div className="navbar__header">
         <a href="#" className="navbar__title">
-          REACTSOCIAL
+          <i className="fab fa-pied-piper navbar__icon"></i> {/* Ícono de Pied Piper */}
+          Pied Piper
         </a>
       </div>
       <Nav />

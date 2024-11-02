@@ -12,6 +12,8 @@ import { Config } from "../components/user/Config.jsx";
 import { Following } from "../components/follow/Following.jsx";
 import { Followers } from "../components/follow/Followers.jsx";
 import { Profile } from "../components/user/Profile.jsx";
+import { ProffesionalRegister } from "../components/user/ProffesionalRegister.jsx";
+import { CompanyRegister } from "../components/user/CompanyRegister.jsx";
 
 export const Routing = () => {
   return (
@@ -22,6 +24,8 @@ export const Routing = () => {
             <Route index element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Register />} />
+            <Route path="/registro/profesional" element={<ProffesionalRegister/>} /> 
+            <Route path="/registro/empresa" element={<CompanyRegister />} /> 
           </Route>
 
           <Route path="/social" element={<PrivateLayout />}>

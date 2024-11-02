@@ -1,0 +1,156 @@
+/*ESTILOS DE CONTENIDO*/
+.layout__content{
+    grid-area: content;
+    padding: 0 1.5rem;
+}
+
+
+.content__header, .aside__header{
+    width: 100%;
+    border-bottom: 1px solid var(--color-border-headers);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+}
+
+.content__title, .aside__title{
+    font-size: 3.5rem;
+    margin-right: 1rem;
+}
+
+.content__button{
+    background-color: var(--color-background-btn-success);
+    color: var(--color-text-navbar);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border-btn-success);
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+
+.content__button--right{
+    float:right;
+}
+
+.content__button:hover, .content__btn-more-post:hover {
+    background-color: var(--color-background-btn-success-hover);
+    border-color: var(--color-border-btn-success-hover);
+}
+
+
+.content__posts{
+    width: 100%;
+}
+
+
+.posts__post{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--color-border-post);
+    padding: 1.5rem;
+}
+
+
+.post__container{
+    display: flex;
+    flex-direction: row;
+}
+
+.post__image-user{
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 100rem;
+    margin-right: 1.5rem;
+    overflow: hidden;
+}
+
+.post__user-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 3.2rem;
+}
+
+.post__user-info{
+    margin-top: 1rem;
+}
+
+.user-info__name{
+    color: var(--color-name-user);
+}
+
+.user-info__create-date{
+    color: gray;
+}
+
+.post__content{
+    margin: 1rem 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.post__buttons{
+    display: flex;
+    align-items: center;
+ 
+}
+
+.post__button{
+    color: var(--color-text-navbar);
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+    border-radius: 0.4rem;
+    background-color: var(--color-background-btn-delete);
+    border-color: var(--color-border-btn-delete);
+}
+
+
+.post__button--green{
+    background-color: var(--color-background-btn-success);
+    border-color: var(--color-border-btn-success);
+}
+
+
+.post__button--green:hover{
+    background-color: --color-background-btn-success-hover;
+    border-color: var(--color-border-btn-success);
+}
+
+.post__button:hover{
+    background-color: var(--color-background-btn-delete-hover);
+    border-color: var(--color-border-btn-delete-hover);
+}
+
+.post__button--green:hover{
+    background-color:var(--color-background-btn-success-hover);
+    border-color:var(--color-border-btn-success-hover);
+}
+
+
+
+.content__container-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content__btn-more-post{
+    background-color: var(--color-background-btn-success);
+    color: var(--color-text-navbar);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border-btn-success);
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    cursor: pointer;
+    font-size: 1.4rem;
+}

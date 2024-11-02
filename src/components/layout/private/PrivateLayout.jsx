@@ -11,18 +11,13 @@ export const PrivateLayout = () => {
     return <h1>Cargando...</h1>;
   } else {
     return (
-      <>
-        {/* CABECERA */}
-        <Header />
-
-        {/* CONTENIDO PRINCIPAL */}
-        <section className="layout__content">
+      <div className="private-layout">
+        <Header className="private-layout__header" />
+        <Sidebar className="layout__aside" />
+        <section className="private-layout__content">
           {auth._id ? <Outlet /> : <Navigate to="/login" />}
         </section>
-
-        {/* BARRA LATERAL */}
-        <Sidebar />
-      </>
+      </div>
     );
   }
 };

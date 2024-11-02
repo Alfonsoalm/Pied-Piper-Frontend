@@ -5,8 +5,7 @@ import useAuth from "../../../hooks/useAuth";
 import { Global } from "../../../helpers/Global";
 
 export const Nav = () => {
-
-  const {auth} = useAuth();
+  const { auth } = useAuth();
 
   return (
     <nav className="navbar__container-lists">
@@ -31,19 +30,21 @@ export const Nav = () => {
             <span className="menu-list__title">Gente</span>
           </NavLink>
         </li>
-
       </ul>
 
       <ul className="container-lists__list-end">
         <li className="list-end__item">
-          <NavLink to={"/social/perfil/"+auth._id} className="list-end__link-image">
-            {auth.image != "default.png" && <img src={Global.url + "user/avatar/" + auth.image} className="list-end__img" alt="Foto de perfil"/>}
-            {auth.image == "default.png" && <img src={avatar} className="list-end__img" alt="Foto de perfil"/>}
+          <NavLink to={"/social/perfil/" + auth._id} className="list-end__link-image">
+            {auth.image !== "default.png" ? (
+              <img src={Global.url + "user/avatar/" + auth.image} className="list-end__img" alt="Foto de perfil" />
+            ) : (
+              <img src={avatar} className="list-end__img" alt="Foto de perfil" />
+            )}
           </NavLink>
         </li>
 
         <li className="list-end__item">
-          <NavLink to={"/social/perfil/"+auth._id} className="list-end__link">
+          <NavLink to={"/social/perfil/" + auth._id} className="list-end__link">
             <span className="list-end__name">{auth.nick}</span>
           </NavLink>
         </li>
@@ -58,10 +59,9 @@ export const Nav = () => {
         <li className="list-end__item">
           <NavLink to="/social/logout" className="list-end__link">
             <i className="fa-solid fa-arrow-right-from-bracket"></i>
-            <span className="list-end__name">Cerrar sesion</span>
+            <span className="list-end__name">Cerrar sesión</span>
           </NavLink>
         </li>
-
       </ul>
     </nav>
   );

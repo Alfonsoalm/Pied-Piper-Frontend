@@ -1,0 +1,95 @@
+/*ESTILOS GENERALES*/
+:root {
+    --color-general-text: #333;
+    --color-backgroud-navbar: #131a5c;
+    --color-text-navbar: white;
+    --color-hover-navbar: #1756cc;
+
+    --color-border-headers: #eee;
+
+    --color-background-btn-success: #5cb85c;
+    --color-border-btn-success: #4cae4c;
+    --color-background-btn-success-hover: #449d44;
+    --color-border-btn-success-hover: #398439;
+
+    --color-background-btn-delete: #d9534f;
+    --color-border-btn-delete: #d43f3a;
+    --color-background-btn-delete-hover: #c9302c;
+    --color-border-btn-delete-hover: #ac2925;
+
+    --color-border-post: #ddd;
+    --color-name-user: #337ab7;
+
+    --color-text-black: #555;
+    --color-text-nickname: #969393;
+    --color-number-stats: green;
+
+    --color-border-textarea: #ccc;
+    --color-border-textarea-focus: #66afe9;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+}
+
+
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--color-general-text);
+}
+
+.layout {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Layout para las páginas privadas */
+.layout--private {
+    display: grid;
+    grid-template-areas:
+        "nav nav nav"
+        "content content aside";
+    grid-template-rows: 60px auto auto;
+    grid-template-columns: 60% 20% 20%;
+    width: 100%;
+    max-height: 80rem;
+}
+
+/* Centrado específico para el contenido de registro o páginas públicas */
+.layout--centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.alert-success{
+    background: #5cb85c;
+    border: 1px solid #0c8e0c;
+    color: white;
+}
+
+.alert-error{
+    background: #e67d3b;
+    border: 1px solid #8d4900;
+    color: white;
+}

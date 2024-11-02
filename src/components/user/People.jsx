@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Global } from "../../helpers/Global.jsx";
 import { UserList } from "./UserList.jsx";
-import useAuth from "../../hooks/useAuth.jsx";
 
 export const People = () => {
 
@@ -17,38 +16,50 @@ export const People = () => {
 
   const getUsers = async (nextPage = 1) => {
     setLoading(true);
-    // Peticion para sacar usuarios
-    const request = await fetch(Global.url + "user/list/" + nextPage, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
-      },
-    });
-
-    // Crear un estado para poder listarlos
-    const data = await request.json();
-
-    // Crear un estado para poder listarlos
-    if (data.users && data.status == "success") {
-      let newUsers = data.users;
-
-      if (users.length >= 1) {
-        newUsers = [...users, ...data.users];
+  
+    try {
+      const request = await fetch(Global.url + "user/list/" + nextPage, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("token"),
+        },
+      });
+  
+      // Inspecciona el estado de la respuesta
+      console.log("Request status:", request.status);
+      console.log("Request response type:", request.headers.get("Content-Type"));
+  
+      // Intenta parsear la respuesta solo si es JSON
+      if (request.ok && request.headers.get("Content-Type")?.includes("application/json")) {
+        const data = await request.json();
+  
+        if (data.users && data.status === "success") {
+          let newUsers = data.users;
+  
+          if (users.length >= 1) {
+            newUsers = [...users, ...data.users];
+          }
+  
+          setUsers(newUsers);
+          setFollowing(data.user_following);
+          setLoading(false);
+          console.log(data.user_following);
+        }
+  
+        // Paginación: termina si ya no hay más usuarios
+        if (users.length >= data.total - data.users.length) {
+          setMore(false);
+        }
+      } else {
+        console.error("Error al obtener usuarios, respuesta no es JSON:", request);
+        setLoading(false);
       }
-
-      setUsers(newUsers);
-      setFollowing(data.user_following);
+    } catch (error) {
+      console.error("Error al obtener usuarios:", error);
       setLoading(false);
-      console.log(data.user_following);
-    }
-
-    // Paginacion termina al poner todo los usuario para quitar boton
-    if (users.length >= data.total - data.users.length) {
-      setMore(false);
     }
   };
-
 
   return (
     <>

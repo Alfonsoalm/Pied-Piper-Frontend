@@ -1,0 +1,52 @@
+.register-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem; /* Espacio superior para centrar mejor en la pantalla */
+}
+
+.register-selection__title {
+  font-size: 2.5rem; /* Aumenta el tamaño del título */
+  margin-bottom: 2rem;
+}
+
+.register-selection__options {
+  display: flex;
+  gap: 3rem; /* Aumenta el espacio entre las tarjetas */
+  justify-content: center;
+}
+
+.register-option {
+  padding: 2.5rem;
+  width: 250px; /* Aumenta el ancho de la tarjeta */
+  text-align: center;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra para un efecto de profundidad */
+}
+
+.register-option:hover {
+  transform: scale(1.1); /* Aumenta el efecto de zoom al pasar el ratón */
+}
+
+.register-option__icon {
+  width: 200px; /* Aumenta el tamaño de la imagen */
+  height: 200px;
+  margin-bottom: 1.5rem; /* Ajusta el espacio entre la imagen y el título */
+}
+
+.register-option h2 {
+  font-size: 1.8rem; /* Aumenta el tamaño del texto de los títulos */
+  color: #007bff; /* Cambia el color para hacerlo más destacable */
+  margin-bottom: 1rem;
+}
+
+.register-option p {
+  font-size: 1.2rem; /* Aumenta el tamaño del texto de descripción */
+  color: #555;
+}
