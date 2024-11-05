@@ -7,11 +7,17 @@ export const Login = () => {
   const { form, changed } = useForm({});
   const [saved, setSaved] = useState("not_sended");
   const { setAuth } = useAuth();
+  
+  // Nuevo estado para saber si es empresa
+  const [isCompany, setIsCompany] = useState(false);
 
   const loginUser = async (e) => {
     e.preventDefault();
+
     let userToLogin = form;
-    const request = await fetch(Global.url + "user/login", {
+    let loginEndpoint = isCompany ? "company/login" : "user/login"; // Dependiendo si es empresa o usuario
+
+    const request = await fetch(Global.url + loginEndpoint, {
       method: "POST",
       body: JSON.stringify(userToLogin),
       headers: {
@@ -19,8 +25,11 @@ export const Login = () => {
       },
       credentials: "include",
     });
+
     const data = await request.json();
+
     console.log(data);
+
     if (data.status === "success") {
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
@@ -73,6 +82,20 @@ export const Login = () => {
               type="password"
               name="password"
               onChange={changed}
+              className="login-form-input"
+            />
+          </div>
+
+          {/* Agregar opción para seleccionar si es empresa o usuario */}
+          <div className="login-form-group">
+            <label htmlFor="isCompany" className="login-form-label">
+              ¿Eres una empresa?
+            </label>
+            <input
+              type="checkbox"
+              name="isCompany"
+              checked={isCompany}
+              onChange={() => setIsCompany(!isCompany)}
               className="login-form-input"
             />
           </div>

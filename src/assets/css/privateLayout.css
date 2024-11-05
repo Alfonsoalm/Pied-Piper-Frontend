@@ -1,14 +1,53 @@
+
+/*ESTILOS GENERALES*/
+:root {
+    --color-general-text: #333;
+    --color-backgroud-navbar: #131a5c;
+    --color-text-navbar: white;
+    --color-hover-navbar: #1756cc;
+    --color-border-headers: #eee;
+    --color-background-btn-success: #5cb85c;
+    --color-border-btn-success: #4cae4c;
+    --color-background-btn-success-hover: #449d44;
+    --color-border-btn-success-hover: #398439;
+    --color-background-btn-delete: #d9534f;
+    --color-border-btn-delete: #d43f3a;
+    --color-background-btn-delete-hover: #c9302c;
+    --color-border-btn-delete-hover: #ac2925;
+    --color-border-post: #ddd;
+    --color-name-user: #337ab7;
+    --color-text-black: #555;
+    --color-text-nickname: #969393;
+    --color-number-stats: green;
+    --color-border-textarea: #ccc;
+    --color-border-textarea-focus: #66afe9;
+}
+
+/* Estilos para Empresa */
+.company-layout {
+    --color-backgroud-navbar: #046246; /* Verde para empresas */
+    --color-background: #e9f5e9;
+    --color-border: #07ab7a;
+  }
+  
+  /* Estilos para Profesional */
+  .professional-layout {
+    --color-backgroud-navbar: #131a5c; /* Azul para profesionales */
+    --color-background: #e9f0fa;
+    --color-border: #2331a9;
+}
+
+
 .private-layout {
     display: grid;
     grid-template-areas: 
         "header header"
         "content aside";
-    grid-template-columns: 75% 1fr; /* ancho del aside al 25% y el contenido al resto */
+    grid-template-columns: 70% 30%; /* Ancho del aside al 30% y el contenido al 70% */
     grid-template-rows: auto 1fr;
-    
     min-height: 100vh;
     gap: 2rem;
-    background-color: #f9f9f9;
+    background-color: var(--color-background);
 }
 
 .layout__navbar {
@@ -50,12 +89,12 @@
     grid-area: content;
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 2rem;
     background-color: #fff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin-top: 6rem; /* Ajusta este margen para compensar la altura del header fijo */
+    margin-top: 6rem; /* Compensar la altura del header fijo */
+    overflow: auto;  /* Para evitar que el contenido se desborde */
 }
 
 .layout__aside {
@@ -63,6 +102,75 @@
     background-color: #f5f5f5;
     padding: 1.5rem;
     border-right: 1px solid #ddd;
-    min-height: calc(100vh - 5.3rem);
-    margin-top: 6rem;
+    height: auto; /* Ajusta la altura del sidebar */
+    margin-top: 6rem; /* Compensar la altura del header fijo */
+    position: sticky;
+    top: 0;
 }
+
+
+ /* Navbar */
+ .container-lists__list-end{
+    display: flex;
+    align-items: center;
+}
+
+.list-end__item:first-child{
+    padding: 0.6rem;
+}
+
+.list-end__img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 3.2rem;
+}
+
+.list-end__link{
+    color: white;
+    padding: 1.8rem;
+}
+
+.list-end__name{
+    color: white;
+    padding: 0.5rem;
+}
+
+/* TAGSINPUT */
+.tags-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .tags-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tag {
+    background-color: #007bff;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .tag-close-icon {
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .tags-input-container input {
+    border: none;
+    outline: none;
+    flex: 1;
+    min-width: 150px;
+  }
+  

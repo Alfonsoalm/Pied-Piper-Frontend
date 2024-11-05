@@ -1,3 +1,5 @@
+
+
 /*ESTILOS BARRA LATERAL*/
 .layout__aside{
     grid-area: aside;
@@ -100,8 +102,6 @@
 form{
     max-width: 300px;
 }
-
-
 
 .form-post__inputs, 
 input[type="text"],

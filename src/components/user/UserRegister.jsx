@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { TagsInput } from "../common/TagsInput.jsx";  // Importamos el componente de etiquetas
 import { useForm } from "../../hooks/useForm.jsx";
 import { Global } from "../../helpers/Global.jsx";
-import { TagsInput } from "../common/TagsInput.jsx";  // Importamos el componente de etiquetas
 
-export const CompanyRegister = () => {
+export const UserRegister = () => {
   const { form, changed } = useForm({});
-  const [sectors, setSectors] = useState([]);  // Manejar sectores como etiquetas
+  const [professions, setProfessions] = useState([]);  // Manejar profesiones como etiquetas
   const [saved, setSaved] = useState("not_sended");
   const [passwords, setPasswords] = useState({ password: '', repeatPassword: '' }); // Nuevo estado para las contraseñas
   const [passwordError, setPasswordError] = useState('');  // Estado para el error de contraseñas
@@ -15,7 +15,7 @@ export const CompanyRegister = () => {
     setPasswords({ ...passwords, [e.target.name]: e.target.value });
   };
 
-  const saveCompany = async (e) => {
+  const saveUser = async (e) => {
     e.preventDefault();
 
     // Validar que ambas contraseñas sean iguales
@@ -24,18 +24,17 @@ export const CompanyRegister = () => {
       return;
     }
 
-    // Añadir sectores al formulario
-    const newCompany = { ...form, sectors, password: passwords.password };
+    // Añadir profesiones al formulario
+    const newUser = { ...form, professions, password: passwords.password };
 
-    console.log(newCompany);
-
-    const request = await fetch(Global.url + "company/register", {
+    const request = await fetch(Global.url + "user/register", {
       method: "POST",
-      body: JSON.stringify(newCompany),
+      body: JSON.stringify(newUser),
       headers: {
         "Content-Type": "application/json",
       },
     });
+
     const data = await request.json();
     setSaved(data.status === "success" ? "saved" : "error");
   };
@@ -43,34 +42,29 @@ export const CompanyRegister = () => {
   return (
     <div className="register-container">
       <div className="register-form">
-        <h1>Registro para Empresas</h1>
-        {saved === "saved" && <div className="alert alert-success">Empresa registrada correctamente!</div>}
-        {saved === "error" && <div className="alert alert-error">Error al registrar empresa</div>}
+        <h1>Registro para Profesional</h1>
+        {saved === "saved" && <div className="alert alert-success">Usuario registrado correctamente!</div>}
+        {saved === "error" && <div className="alert alert-error">Error al registrar usuario</div>}
 
-        <form onSubmit={saveCompany}>
+        <form onSubmit={saveUser}>
           <div className="form-group">
             <label htmlFor="name">Nombre</label>
             <input type="text" name="name" onChange={changed} />
           </div>
 
           <div className="form-group">
-            <label htmlFor="legal_id">Numero de Identificación</label>
-            <input type="text" name="legal_id" onChange={changed} />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="location">Localización</label>
-            <input type="text" name="location" onChange={changed} />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="sectors">Sectores</label>
-            <TagsInput tags={sectors} setTags={setSectors} placeholder="Añadir sectores y presionar Enter" />
+            <label htmlFor="surname">Apellidos</label>
+            <input type="text" name="surname" onChange={changed} />
           </div>
 
           <div className="form-group">
             <label htmlFor="email">Correo Electrónico</label>
             <input type="email" name="email" onChange={changed} />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="professions">Profesiones</label>
+            <TagsInput tags={professions} setTags={setProfessions} placeholder="Añadir profesiones y presionar Enter" />
           </div>
 
           <div className="form-group">
@@ -85,7 +79,7 @@ export const CompanyRegister = () => {
 
           {passwordError && <div className="alert alert-error">{passwordError}</div>} {/* Mostrar error si hay */}
 
-          <button type="submit" className="btn-success">Registrar Empresa</button>
+          <button type="submit" className="btn-success">Registrate</button>
         </form>
       </div>
     </div>

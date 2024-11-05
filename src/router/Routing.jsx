@@ -12,8 +12,11 @@ import { Config } from "../components/user/Config.jsx";
 import { Following } from "../components/follow/Following.jsx";
 import { Followers } from "../components/follow/Followers.jsx";
 import { Profile } from "../components/user/Profile.jsx";
-import { ProffesionalRegister } from "../components/user/ProffesionalRegister.jsx";
 import { CompanyRegister } from "../components/user/CompanyRegister.jsx";
+import { UserRegister } from "../components/user/UserRegister.jsx";
+import { Sectors } from "../components/user/Sectors.jsx";
+import { Profiles } from "../components/user/Profiles.jsx";
+import { Offers } from "../components/user/Offers.jsx";
 
 export const Routing = () => {
   return (
@@ -24,14 +27,16 @@ export const Routing = () => {
             <Route index element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Register />} />
-            <Route path="/registro/profesional" element={<ProffesionalRegister/>} /> 
+            <Route path="/registro/profesional" element={<UserRegister/>} /> 
             <Route path="/registro/empresa" element={<CompanyRegister />} /> 
           </Route>
 
           <Route path="/social" element={<PrivateLayout />}>
             <Route index element={<Feed />} />
             <Route path="feed" element={<Feed />} />
-            <Route path="registro" element={<Register />} />
+            <Route path="sectors" element={<Sectors />} />
+            <Route path="profiles" element={<Profiles />} />
+            <Route path="offers" element={<Offers />} />
             <Route path="logout" element={<Logout />} />
             <Route path="gente" element={<People />} />
             <Route path="ajustes" element={<Config />} />

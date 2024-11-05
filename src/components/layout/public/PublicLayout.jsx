@@ -6,6 +6,8 @@ import useAuth from '../../../hooks/useAuth';
 export const PublicLayout = () => {
   const { auth } = useAuth();
 
+  console.log("auth._id:",auth._id);
+
   return (
     <div className="public-layout">
       <Header className="public-layout__header" />

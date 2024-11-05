@@ -1,0 +1,143 @@
+/*ESTILOS GENERALES*/
+:root {
+    --color-general-text: #333;
+    --color-backgroud-navbar: #131a5c;
+    --color-text-navbar: white;
+    --color-hover-navbar: #1756cc;
+
+    --color-border-headers: #eee;
+
+    --color-background-btn-success: #5cb85c;
+    --color-border-btn-success: #4cae4c;
+    --color-background-btn-success-hover: #449d44;
+    --color-border-btn-success-hover: #398439;
+
+    --color-background-btn-delete: #d9534f;
+    --color-border-btn-delete: #d43f3a;
+    --color-background-btn-delete-hover: #c9302c;
+    --color-border-btn-delete-hover: #ac2925;
+
+    --color-border-post: #ddd;
+    --color-name-user: #337ab7;
+
+    --color-text-black: #555;
+    --color-text-nickname: #969393;
+    --color-number-stats: green;
+
+    --color-border-textarea: #ccc;
+    --color-border-textarea-focus: #66afe9;
+}
+
+.layout__navbar {
+    width: 100%;
+    grid-area: nav;
+    background-color: var(--color-backgroud-navbar);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    height: 7.3rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el navbar */
+}
+
+.navbar__header {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__container-lists {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.5rem;
+}
+
+.navbar__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Mantiene el título en una sola línea */
+}
+
+.navbar__title:hover {
+    transform: scale(1.05);
+    color: #ffdd57;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.navbar__icon {
+    font-size: 2.5rem; /* Tamaño del ícono */
+    margin-right: 0.5rem; /* Espacio entre el ícono y el texto */
+    fill: #ffffff;
+}
+
+.container-lists__menu-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem; /* Espacio entre los elementos */
+    margin-left: 30px;
+}
+
+.menu-list__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.menu-list__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-text-navbar);
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: font-size 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.menu-list__title {
+    font-size: 1.2rem;
+    margin-top: 0.5rem; /* Espacio entre icono y texto */
+    color: white;
+}
+
+.menu-list__link:hover,
+.list-end__link:hover {
+    font-size: 1.05rem; /* Tamaño del texto cuando se hace hover */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño de los elementos */
+    transition: transform 0.2s ease-in-out;
+}
+
+.menu-list__item i:hover,
+.list-end__link i:hover {
+    font-size: 1.2rem; /* Aumenta ligeramente el tamaño de los iconos */
+    transition: transform 0.2s ease-in-out;
+}
+
+.list-end__link {
+    display: flex;
+    align-items: center;
+    color: var(--color-text-navbar);
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: font-size 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.list-end__item {
+    margin-left: 1.5rem; /* Espacio entre los elementos de la derecha */
+}
+
+.list-end__link:hover {
+    font-size: 1.1rem;
+    transform: scale(1.05);
+}

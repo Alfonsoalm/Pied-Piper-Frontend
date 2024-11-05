@@ -6,12 +6,14 @@ import useAuth from "../../../hooks/useAuth";
 
 export const PrivateLayout = () => {
   const { auth, loading } = useAuth();
+  
+  const layoutClass = auth.legal_id ? "company-layout" : "professional-layout";
 
   if (loading) {
     return <h1>Cargando...</h1>;
   } else {
     return (
-      <div className="private-layout">
+      <div className={`private-layout ${layoutClass}`}>
         <Header className="private-layout__header" />
         <Sidebar className="layout__aside" />
         <section className="private-layout__content">
@@ -20,4 +22,5 @@ export const PrivateLayout = () => {
       </div>
     );
   }
+
 };

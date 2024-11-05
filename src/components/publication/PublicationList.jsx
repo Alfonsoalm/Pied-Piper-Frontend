@@ -5,7 +5,14 @@ import useAuth from "../../hooks/useAuth.jsx";
 import { Global } from "../../helpers/Global.jsx";
 import ReactTimeAgo from "react-time-ago";
 
-export const PublicationList = ({publications,getPublications,page,setPage,more,setMore}) => {
+export const PublicationList = ({
+  publications,
+  getPublications,
+  page,
+  setPage,
+  more,
+  setMore,
+}) => {
   const { auth } = useAuth();
 
   const nextPage = () => {
@@ -27,7 +34,6 @@ export const PublicationList = ({publications,getPublications,page,setPage,more,
     );
 
     const data = await request.json();
-
     setPage(1);
     setMore(true);
     getPublications(1, true);
@@ -52,15 +58,13 @@ export const PublicationList = ({publications,getPublications,page,setPage,more,
                             Global.url + "user/avatar/" + publication.user.image
                           }
                           className="post__user-image"
-                          alt="Foto de perfil"
-                        />
+                          alt="Foto de perfil"/>
                       )}
                       {publication.user.image == "default.png" && (
                         <img
                           src={avatar}
                           className="post__user-image"
-                          alt="Foto de perfil"
-                        />
+                          alt="Foto de perfil"/>
                       )}
                     </Link>
                   </div>
@@ -72,11 +76,13 @@ export const PublicationList = ({publications,getPublications,page,setPage,more,
                       </a>
                       <span className="user-info__divider"> | </span>
                       <a href="#" className="user-info__create-date">
-                        {publication.created_at ?
-                        <ReactTimeAgo date={parseInt(publication.created_at)} locale="es-ES"/>
-                        :
-                        <p>Sin fecha</p>
-                        }
+                        {publication.created_at ? (
+                          <ReactTimeAgo
+                            date={parseInt(publication.created_at)}
+                            locale="es-ES"/>
+                        ) : (
+                          <p>Sin fecha</p>
+                        )}
                       </a>
                     </div>
 
@@ -87,8 +93,7 @@ export const PublicationList = ({publications,getPublications,page,setPage,more,
                         src={
                           Global.url + "publication/media/" + publication.file
                         }
-                        alt="Foto de perfil"
-                      />
+                        alt="Foto de perfil"/>
                     )}
                   </div>
                 </div>
@@ -97,8 +102,7 @@ export const PublicationList = ({publications,getPublications,page,setPage,more,
                   <div className="post__buttons">
                     <button
                       onClick={() => deletePublication(publication._id)}
-                      className="post__button"
-                    >
+                      className="post__button">
                       <i className="fa-solid fa-trash-can"></i>
                     </button>
                   </div>
