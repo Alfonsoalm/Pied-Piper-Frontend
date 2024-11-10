@@ -7,7 +7,7 @@ export const UserRegister = () => {
   const { form, changed } = useForm({});
   const [professions, setProfessions] = useState([]);  // Manejar profesiones como etiquetas
   const [saved, setSaved] = useState("not_sended");
-  const [passwords, setPasswords] = useState({ password: '', repeatPassword: '' }); // Nuevo estado para las contraseñas
+  const [passwords, setPasswords] = useState({ password: '', repeatPassword: '' }); // Estado para las contraseñas
   const [passwordError, setPasswordError] = useState('');  // Estado para el error de contraseñas
 
   // Función para manejar el cambio de contraseñas
@@ -49,7 +49,7 @@ export const UserRegister = () => {
         <form onSubmit={saveUser}>
           <div className="form-group">
             <label htmlFor="name">Nombre</label>
-            <input type="text" name="name" onChange={changed} />
+            <input type="text" name="name" onChange={changed} required />
           </div>
 
           <div className="form-group">
@@ -59,7 +59,12 @@ export const UserRegister = () => {
 
           <div className="form-group">
             <label htmlFor="email">Correo Electrónico</label>
-            <input type="email" name="email" onChange={changed} />
+            <input type="email" name="email" onChange={changed} required />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="birth_date">Fecha de Nacimiento</label>
+            <input type="date" name="birth_date" onChange={changed} required />
           </div>
 
           <div className="form-group">
@@ -69,12 +74,12 @@ export const UserRegister = () => {
 
           <div className="form-group">
             <label htmlFor="password">Contraseña</label>
-            <input type="password" name="password" onChange={handlePasswordChange} />
+            <input type="password" name="password" onChange={handlePasswordChange} required />
           </div>
 
           <div className="form-group">
             <label htmlFor="repeatPassword">Repetir Contraseña</label>
-            <input type="password" name="repeatPassword" onChange={handlePasswordChange} />
+            <input type="password" name="repeatPassword" onChange={handlePasswordChange} required />
           </div>
 
           {passwordError && <div className="alert alert-error">{passwordError}</div>} {/* Mostrar error si hay */}

@@ -1,0 +1,81 @@
+.companies-header-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  font-weight: bold;
+  padding: 10px 0;
+  margin-left: 16px;
+  margin-right: 16px;
+  text-align: center;
+}
+
+/* Estilos generales para contenedores */
+.companies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Espacio entre las tarjetas */
+  margin: 20px 0;
+  padding: 0 16px;
+}
+
+/* Estilo de las tarjetas */
+.company-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+  max-width: none; /* Eliminar cualquier límite de ancho */
+}
+
+.company-info-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 5px 0;
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.company-image-container {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para el contenido de cada tarjeta */
+.company-card h3,
+.company-card span {
+  margin: 0;
+  font-size: 18px;
+  text-align: center; /* Centrar texto */
+}
+
+
+.company-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  text-align: center; /* Centrar texto */
+}
+
+/* Opcional: Ajuste de tamaño en pantallas más pequeñas */
+@media (max-width: 600px) {
+  .company-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .companies-container {
+    padding: 0 8px;
+  }
+}

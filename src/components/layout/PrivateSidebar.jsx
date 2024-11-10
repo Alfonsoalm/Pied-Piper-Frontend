@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import avatar from '../../../assets/img/user.png';
-import useAuth from '../../../hooks/useAuth';
-import { Global } from '../../../helpers/Global';
+import avatar from '../../assets/img/user.png';
+import useAuth from '../../hooks/useAuth';
+import { Global } from '../../helpers/Global';
 import { Link, NavLink } from 'react-router-dom';
-import { useForm } from '../../../hooks/useForm';
+import { useForm } from '../../hooks/useForm';
 
 export const Sidebar = () => {
 
@@ -66,8 +66,6 @@ export const Sidebar = () => {
         myForm.reset();
     }
 
-    console.log(auth, counters);
-
   return (
            <aside className="layout__aside">
 
@@ -80,7 +78,7 @@ export const Sidebar = () => {
                      
                     <div className="profile-info__general-info">
                         <div className="general-info__container-avatar">
-                            {auth.image != "default.png" && <img src={Global.url + "user/avatar/" + auth.image} className="container-avatar__img" alt="Foto de perfil"/>}
+                            {auth.image != "default.png" && <img src={Global.url + "user/avatar/" + auth.image} className="avatar-img" alt="Foto de perfil"/>}
                             {auth.image == "default.png" && <img src={avatar} className="container-avatar__img" alt="Foto de perfil"/>}
                         </div>
                         <div className="general-info__container-names">
@@ -111,7 +109,6 @@ export const Sidebar = () => {
                         </div>
                     </div>
                 </div>
-
 
                 <div className="aside__container-form">
                 {stored == "stored" ?  <strong className="alert alert-success">Publicacion guardada !</strong>: ""}

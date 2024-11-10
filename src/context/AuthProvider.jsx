@@ -30,7 +30,6 @@ export const AuthProvider = ({ children }) => {
             // Parsear el usuario desde el localStorage
             const userObj = JSON.parse(user);
             const userId = userObj.id;
-
             const isCompany = userObj.isCompany || false;  // Asegurarse de tener la propiedad isCompany
     
             // Definir las URLs dinámicas dependiendo de si es empresa o usuario
@@ -55,7 +54,6 @@ export const AuthProvider = ({ children }) => {
     
             // Obtener el texto de la respuesta
             const profileText = await profileResponse.text();
-            console.log("Profile response text:", profileText);  // Log para verificar el texto
     
             // Intentar parsear el JSON del perfil
             let profileData;
@@ -85,7 +83,6 @@ export const AuthProvider = ({ children }) => {
     
             // Obtener el texto de la respuesta de contadores
             const countersText = await countersResponse.text();
-            console.log("Counters response text:", countersText);  // Log para verificar el texto
     
             // Intentar parsear el JSON de los contadores
             let countersData;
@@ -98,7 +95,6 @@ export const AuthProvider = ({ children }) => {
             }
     
             // Actualizar el estado de autenticación y contadores
-            console.log("profileData.user:", profileData.user);
             setAuth(profileData.user || {});  // Actualizar el estado con los datos del perfil
             setCounters(countersData || {});  // Actualizar el estado con los datos de contadores
         } catch (error) {

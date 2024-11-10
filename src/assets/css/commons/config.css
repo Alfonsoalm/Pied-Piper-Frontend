@@ -1,0 +1,139 @@
+
+/*ESTILOS GENERALES*/
+:root {
+    --color-general-text: #333;
+    --color-backgroud-navbar: #131a5c;
+    --color-text-navbar: white;
+    --color-hover-navbar: #1756cc;
+    --color-border-headers: #eee;
+    --color-background-btn-success: #5cb85c;
+    --color-border-btn-success: #4cae4c;
+    --color-background-btn-success-hover: #449d44;
+    --color-border-btn-success-hover: #398439;
+    --color-background-btn-delete: #d9534f;
+    --color-border-btn-delete: #d43f3a;
+    --color-background-btn-delete-hover: #c9302c;
+    --color-border-btn-delete-hover: #ac2925;
+    --color-border-post: #ddd;
+    --color-name-user: #337ab7;
+    --color-text-black: #555;
+    --color-text-nickname: #969393;
+    --color-number-stats: green;
+    --color-border-textarea: #ccc;
+    --color-border-textarea-focus: #66afe9;
+}
+
+
+
+
+.config-form {
+  width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+  max-width: 100%; /* Elimina cualquier restricción de ancho máximo */
+}
+
+.config-content__posts {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.config-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+  gap: 1.5rem; /* Espacio entre elementos */
+  width: 100%;
+}
+
+.config-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.config-form-group.full-width {
+  grid-column: span 2; /* Hace que el elemento ocupe ambas columnas */
+}
+
+.config-general-info__container-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.config-avatar-img,
+.config-container-avatar__img {
+  width: 10rem; /* Ajusta el tamaño del avatar */
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+input[type="file"] {
+  margin-top: 0.5rem;
+}
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Personalización para campos específicos */
+.config-bio {
+  grid-column: span 2; /* Hace que el área de biografía ocupe ambas columnas */
+  height: 10rem; /* Ajusta la altura si es necesario */
+}
+
+.config-custom-schedule {
+  grid-column: span 2; /* Ocupa el ancho completo en caso de horario personalizado */
+}
+
+.config-form-group.inline-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.config-form-group.inline-group > div {
+  flex: 1;
+}
+
+.config-btn,
+input[type="submit"].config-btn {
+  background-color: var(--color-hover-navbar);
+  color: var(--color-text-navbar) !important;
+  padding: 0.3rem 0.7rem; /* Tamaño ajustado */
+  margin-bottom: 5px;
+  border: 1px solid var(--color-text-navbar);
+  border-radius: 15px; /* Borde redondeado */
+  font-size: 0.9rem; /* Tamaño de fuente ajustado */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.config-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo adicional para ubicaciones preferidas */
+.config-preferred-locations {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.config-preferred-locations input {
+  width: calc(100% - 1rem);
+  margin-top: 0.5rem;
+}
+
+.config-distance-range {
+  margin-top: 1rem;
+}

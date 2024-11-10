@@ -25,16 +25,27 @@
     flex-direction: row;
 }
 
-.general-info__container-avatar{
-    width: 7.5rem;
-    height: 7.5rem;
-    border-radius: 100rem;
-    margin-right: 1.5rem;
-    overflow: hidden;
+.general-info__container-names{
+    margin-left: 20px;
+
 }
 
-.container-avatar__img{
-    height: 100%;
+.general-info__container-avatar {
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%; /* Usar 50% para asegurar un círculo perfecto */
+    overflow: hidden; /* Asegurar que el contenido no desborde */
+    display: flex;
+    justify-content: center; /* Centrar el contenido */
+    align-items: center; /* Centrar el contenido */
+}
+
+.avatar-img {
+    width: 5rem; /* Puedes ajustar el tamaño */
+    height: 5rem;
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Asegura que la imagen se mantenga proporcionada */
+    margin-right: 10px;
 }
 
 .container-names__name{
@@ -150,11 +161,11 @@ textarea:focus{
 
 
 .form-post__btn-submit,
-input[type="submit"],
-button{
+input[type="submit"]{
     background-color: var(--color-background-btn-success);
     color: var(--color-text-navbar) !important;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 0.7rem;
+    margin: 0.2rem;
     border: 1px solid var(--color-border-btn-success);
     border-radius: 0.3rem;
     font-size: 1.2rem;

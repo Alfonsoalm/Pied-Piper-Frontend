@@ -1,0 +1,84 @@
+.user-header-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: bold;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 10px 0;
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.users-container {
+  display: flex;
+  flex-direction: column; /* Asegurar disposición vertical */
+  gap: 15px; /* Espacio entre tarjetas */
+  width: 100%; /* Asegurar que el contenedor ocupe todo el ancho */
+}
+
+.user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+  max-width: none; /* Eliminar cualquier límite de ancho */
+}
+
+
+.user-info-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 5px 0;
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+
+.general-info__container-avatar {
+  margin-bottom: 10px;
+}
+
+.avatar-img,
+.container-avatar__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.config-btn {
+  margin-top: 10px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.config-btn:hover {
+  background-color: #0056b3;
+}
+
+.stars-container {
+  display: inline-block;
+}
+
+.filled-star {
+  color: gold;
+  font-size: 1.2em;
+}
+
+.empty-star {
+  color: #ccc;
+  font-size: 1.2em;
+}
+
+.knowledge-area {
+  margin-top: 5px;
+}
