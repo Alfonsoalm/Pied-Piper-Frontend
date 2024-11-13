@@ -20,7 +20,7 @@ export const ProfessList = () => {
   const { profession } = useParams();
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
-  const { filters } = useOutletContext();
+  const { filters, setActiveOffer } = useOutletContext(); // Obtener setActiveOffer del contexto
   const { auth } = useAuth();
 
   const fetchUsers = async () => {
@@ -44,13 +44,13 @@ export const ProfessList = () => {
 
   useEffect(() => {
     let filtered = users;
-  
+
     if (filters.name) {
       filtered = filtered.filter((user) =>
         `${user.name} ${user.surname}`.toLowerCase().includes(filters.name.toLowerCase())
       );
     }
-  
+
     if (filters.profession) {
       filtered = filtered.filter((user) =>
         user.professions.some((p) =>
@@ -58,13 +58,13 @@ export const ProfessList = () => {
         )
       );
     }
-  
+
     if (filters.location) {
       filtered = filtered.filter((user) =>
         user.location && user.location.toLowerCase().includes(filters.location.toLowerCase())
       );
     }
-  
+
     if (filters.experience_years) {
       const minExperience = parseInt(filters.experience_years, 10);
       filtered = filtered.filter(
@@ -73,7 +73,7 @@ export const ProfessList = () => {
           user.professional_info.experience_years >= minExperience
       );
     }
-  
+
     if (filters.work_preference) {
       filtered = filtered.filter(
         (user) =>
@@ -83,7 +83,7 @@ export const ProfessList = () => {
             .includes(filters.work_preference.toLowerCase())
       );
     }
-  
+
     if (filters.title) {
       filtered = filtered.filter(
         (user) =>
@@ -93,7 +93,7 @@ export const ProfessList = () => {
           )
       );
     }
-  
+
     if (filters.courses) {
       filtered = filtered.filter(
         (user) =>
@@ -103,7 +103,7 @@ export const ProfessList = () => {
           )
       );
     }
-  
+
     if (filters.knowledge_area) {
       filtered = filtered.filter((user) => {
         const knowledgeAreas = user.professional_info?.knowledge_areas || {};
@@ -112,9 +112,14 @@ export const ProfessList = () => {
         );
       });
     }
-  
+
     setFilteredUsers(filtered);
   }, [filters, users]);
+
+  // Función para manejar la solicitud de oferta
+  const handleOfferRequest = (user) => {
+    setActiveOffer({ user }); // Establecer la oferta activa
+  };
 
   return (
     <div>
@@ -155,7 +160,12 @@ export const ProfessList = () => {
                   </span>
                 </div>
                 {user._id !== auth.id && (
-                  <button className="config-btn">Solicitar oferta</button>
+                  <button
+                    className="config-btn"
+                    onClick={() => handleOfferRequest(user)}
+                  >
+                    Solicitar oferta
+                  </button>
                 )}
               </div>
             ))}
