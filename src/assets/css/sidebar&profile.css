@@ -1,15 +1,8 @@
 
 
 /*ESTILOS BARRA LATERAL*/
-.layout__aside{
-    grid-area: aside;
-    margin-right: 2rem;
-    
-}
-
 .aside__container{
     width: 100%;
-    
 }
 
 .aside__profile-info{
@@ -76,8 +69,6 @@
     border-right: 2px solid var(--color-border-headers);
     text-align: center;
 }
-
-
 
 .following__title{
     display: block;

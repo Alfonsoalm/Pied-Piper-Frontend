@@ -62,7 +62,7 @@ export const OfferForm = ({ targetUser, companyId, onCancel }) => {
   return (
     <div className="layout__aside">
       <h2>Crear Oferta</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="title">Título del puesto:</label>
           <input

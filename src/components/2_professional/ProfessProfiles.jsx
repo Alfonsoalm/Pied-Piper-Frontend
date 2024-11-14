@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Global } from "../../helpers/Global.jsx";
 import { useOutletContext } from "react-router-dom"; // Importar para recibir contexto
 
-export const Profiles = () => {
+export const ProfessProfiles = () => {
   const [professions, setProfessions] = useState([]);
   const [filteredProfessions, setFilteredProfessions] = useState([]);
   const { filters } = useOutletContext();

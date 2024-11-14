@@ -37,52 +37,16 @@
     --color-border: #2331a9;
 }
 
-
 .private-layout {
     display: grid;
     grid-template-areas: 
         "header header"
         "content aside";
-    grid-template-columns: 80% 20%; /* Ancho del aside al 30% y el contenido al 70% */
+    grid-template-columns: 77% 23%; /* Ancho del aside al 30% y el contenido al 70% */
     grid-template-rows: auto 1fr;
     min-height: 100vh;
     gap: 2rem;
     background-color: var(--color-background);
-}
-
-.layout__navbar {
-    grid-area: header;
-    background-color: var(--color-backgroud-navbar);
-    color: var(--color-text-navbar);
-    padding: 1rem 2rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.navbar__header {
-    display: flex;
-    align-items: center;
-}
-
-.navbar__icon {
-    font-size: 2rem;
-    margin-right: 0.5rem;
-    color: #ffffff;
-}
-
-.navbar__title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
 }
 
 .private-layout__content {
@@ -101,44 +65,13 @@
 
 .layout__aside {
     grid-area: aside;
-    background-color: #f5f5f5;
+    background-color: #e9f5e9;
     padding: 1.5rem;
     border-right: 1px solid #ddd;
     height: auto; /* Ajusta la altura del sidebar */
     margin-top: 6rem; /* Compensar la altura del header fijo */
     position: sticky;
     top: 0;
-}
-
-.filter-group{
-    margin-top: 20px;
-}
-
- /* Navbar */
- .container-lists__list-end{
-    display: flex;
-    align-items: center;
-}
-
-.list-end__item:first-child{
-    padding: 0.6rem;
-}
-
-.list-end__link{
-    color: white;
-    padding: 1.8rem;
-}
-
-.list-end__img{
-    width: 5rem; /* Puedes ajustar el tamaño */
-    height: 5rem;
-    border-radius: 50%; /* Hace la imagen circular */
-    object-fit: cover; /* Asegura que la imagen se mantenga proporcionada */
-}
-
-.list-end__name{
-    color: white;
-    padding: 0.5rem;
 }
 
 /* TAGSINPUT */

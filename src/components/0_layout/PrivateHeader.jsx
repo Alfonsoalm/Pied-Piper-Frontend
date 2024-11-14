@@ -8,7 +8,6 @@ export const Header = () => {
 
   return (
     <header className="layout__navbar">
-      
       {/* Contenedor del título y slogan */}
       <div className="navbar__header">
         <a href="#" className="navbar__title">
@@ -22,31 +21,37 @@ export const Header = () => {
         <ul className="container-lists__menu-list">
           <li className="menu-list__item">
             <NavLink to="/social/feed" className="menu-list__link">
-              <img className="navbar__icon" src="/home.svg" alt="Inicio icon" />
+              <i className="fa-solid fa-house navbar__icon"></i>
               <span className="menu-list__title">Inicio</span>
             </NavLink>
           </li>
           <li className="menu-list__item">
             <NavLink to="/social/offers" className="menu-list__link">
-              <img className="navbar__icon" src="/file-description.svg" alt="Ofertas icon" />
+              <i className="fa-solid fa-briefcase navbar__icon"></i>
               <span className="menu-list__title">Ofertas</span>
             </NavLink>
           </li>
           <li className="menu-list__item">
             <NavLink to="/social/sectors" className="menu-list__link">
-              <img className="navbar__icon" src="/buildings.svg" alt="Sectores icon" />
+              <i className="fa-solid fa-building navbar__icon"></i>
               <span className="menu-list__title">Sectores</span>
             </NavLink>
           </li>
           <li className="menu-list__item">
             <NavLink to="/social/profiles" className="menu-list__link">
-              <img className="navbar__icon" src="/users.svg" alt="Perfiles icon" />
+              <i className="fa-solid fa-users navbar__icon"></i>
               <span className="menu-list__title">Perfiles</span>
             </NavLink>
           </li>
           <li className="menu-list__item">
+            <NavLink to="/social/messages" className="menu-list__link">
+              <i className="fa-solid fa-envelope navbar__icon"></i>
+              <span className="menu-list__title">Mensajes</span>
+            </NavLink>
+          </li>
+          <li className="menu-list__item">
             <NavLink to="/social/gente" className="menu-list__link">
-              <img className="navbar__icon" src="/search.svg" alt="Buscar icon" />
+              <i className="fa-solid fa-search navbar__icon"></i>
               <span className="menu-list__title">Buscar</span>
             </NavLink>
           </li>
@@ -66,18 +71,18 @@ export const Header = () => {
         </li>
         <li className="list-end__item">
           <NavLink to={"/social/perfil/" + auth._id} className="list-end__link">
-            <span className="list-end__name">{auth.name}</span>
+            <span className="list-end__name">{auth.name} {auth.surname}</span>
           </NavLink>
         </li>
         <li className="list-end__item">
           <NavLink to="/social/ajustes" className="list-end__link">
-            <i className="fa-solid fa-gear"></i>
+            <i className="fa-solid fa-gear navbar__icon"></i>
             <span className="list-end__name">Ajustes</span>
           </NavLink>
         </li>
         <li className="list-end__item">
           <NavLink to="/social/logout" className="list-end__link">
-            <i className="fa-solid fa-arrow-right-from-bracket"></i>
+            <i className="fa-solid fa-right-from-bracket navbar__icon"></i>
             <span className="list-end__name">Cerrar sesión</span>
           </NavLink>
         </li>

@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useOutletContext } from "react-router-dom"; // Para obtener el parámetro de la URL
+import { useParams, useOutletContext, useNavigate } from "react-router-dom"; // Importa `useNavigate`
 import { Global } from "../../helpers/Global.jsx";
 import avatar from "../../assets/img/user.png"; // Imagen predeterminada para empresas
 
-// Función auxiliar para generar un número aleatorio de 3 a 5
 const getRandomRating = () => {
   return (Math.random() * 2 + 3).toFixed(1); // Genera un número entre 3 y 5 con 1 decimal
 };
 
-export const CompanyList = () => { // Valor predeterminado para `filters`
-  const { sector } = useParams(); // Obtener el sector de la URL
+export const CompanyList = () => {
+  const { sector } = useParams(); 
   const [companies, setCompanies] = useState([]);
   const [filteredCompanies, setFilteredCompanies] = useState([]);
   const { filters } = useOutletContext();
+  const navigate = useNavigate(); // Inicializa `useNavigate`
 
-  // Función para obtener empresas por sector
   const fetchCompanies = async () => {
     try {
       const response = await fetch(`${Global.url}company/sector/${sector}`);
@@ -22,7 +21,7 @@ export const CompanyList = () => { // Valor predeterminado para `filters`
       if (data.status === "success") {
         const companiesWithRating = data.companies.map((company) => ({
           ...company,
-          rating: parseFloat(getRandomRating()) // Convertimos a número para filtrado
+          rating: parseFloat(getRandomRating()) 
         }));
         setCompanies(companiesWithRating);
         setFilteredCompanies(companiesWithRating);
@@ -38,7 +37,6 @@ export const CompanyList = () => { // Valor predeterminado para `filters`
     fetchCompanies();
   }, [sector]);
 
-  // useEffect para aplicar el filtrado cuando los filtros cambien
   useEffect(() => {
     try {
       let filtered = companies;
@@ -74,12 +72,17 @@ export const CompanyList = () => { // Valor predeterminado para `filters`
       ) : (
         <div>
           {/* Fila superior con títulos */}
-          <div className="companies-header-row">
-            <span>Imagen</span>
-            <span>Nombre</span>
-            <span>Ubicación</span>
-            <span>Sectores</span>
-            <span>Valoración</span>
+          <div className="companies-title-container">
+            <div className="company-title-card">
+              <div className="company-title-info-row">
+                <span>Imagen</span>
+                <span>Nombre</span>
+                <span>Ubicación</span>
+                <span>Sectores</span>
+                <span>Valoración</span>
+                <span>Mas Informacion</span>
+              </div>
+             </div> 
           </div>
 
           <div className="companies-container">
@@ -101,7 +104,13 @@ export const CompanyList = () => { // Valor predeterminado para `filters`
                   <span>{company.name}</span>
                   <span>{company.location || "Falta por rellenar"}</span>
                   <span>{company.sectors.join(", ") || "Falta por rellenar"}</span>
-                  <span>{company.rating}</span> {/* Mostrar la valoración */}
+                  <span>{company.rating}</span>
+                  <button
+                    className="view-details-btn"
+                    onClick={() => navigate(`/social/perfil/empresa/${company._id}`)} // Navegar al perfil de la empresa
+                  >
+                    Ver más detalles
+                  </button>
                 </div>
               </div>
             ))}

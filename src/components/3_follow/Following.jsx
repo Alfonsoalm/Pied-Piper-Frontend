@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { useParams } from "react-router-dom";
 import { Global } from "../../helpers/Global";
-import { UserList } from "../user/UserList";
+import { UserList } from "../0_common/UserList";
 import { GetProfile } from "../../helpers/GetProfile";
 
 

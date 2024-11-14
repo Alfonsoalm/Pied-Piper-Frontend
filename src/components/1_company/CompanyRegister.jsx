@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "../../hooks/useForm.jsx";
 import { Global } from "../../helpers/Global.jsx";
-import { TagsInput } from "../common/TagsInput.jsx";  // Importamos el componente de etiquetas
+import { TagsInput } from "../0_common/TagsInput.jsx";  // Importamos el componente de etiquetas
 
 export const CompanyRegister = () => {
   const { form, changed } = useForm({});

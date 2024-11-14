@@ -27,7 +27,12 @@
   margin-bottom: 20px;
 }
 
+.form{
+  width: 80%;
+}
+
 .form-group {
+  margin-top: 20px;
   margin-bottom: 10px;
   text-align: left;
 }
@@ -45,6 +50,49 @@
   border-radius: 5px;
   border: 1px solid #ddd;
   font-size: 1em;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  background-color: #ffffff; /* Fondo blanco */
+  color: #333; /* Color del texto */
+  box-shadow: none;
+  outline: none;
+}
+
+.form-group input::placeholder,
+.form-group select {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #333;
+  color: #777; /* Ajusta el color del texto del placeholder si es necesario */
+}
+
+.form-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #ffffff; /* Fondo blanco */
+  color: #333; /* Color del texto */
+  cursor: pointer;
+}
+
+.form-buttons{
+  margin: 7px;
+  padding: 7px;
+  display: flex;
+}
+.form-buttons button{
+  margin: 8px;
+  padding: 5px;
+  font-size: 20px;
 }
 
 .btn-success {

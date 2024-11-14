@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { Header } from "./PrivateHeader";
 import { Sidebar } from "./PrivateSidebar";
-import { FilterSidebar } from "../common/FilterSidebar";
-import { OfferForm } from "../user/OfferForm"; // Asegúrate de que esté importado correctamente
+import { FilterSidebar } from "../0_common/FilterSidebar";
+import { OfferForm } from "../0_common/OfferForm"; // Asegúrate de que esté importado correctamente
 import useAuth from "../../hooks/useAuth";
 
 export const PrivateLayout = () => {

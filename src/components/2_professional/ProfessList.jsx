@@ -129,14 +129,18 @@ export const ProfessList = () => {
       ) : (
         <div>
           {/* Fila superior con títulos */}
-          <div className="user-header-row">
-            <span>Profesiones</span>
-            <span>Ubicación</span>
-            <span>Años de experiencia</span>
-            <span>Preferencia de trabajo</span>
-            <span>Título</span>
-            <span>Cursos</span>
-            <span>Áreas de Conocimiento</span>
+          <div className="users-title-container">
+            <div className="user-title-card">
+              <div className="user-title-info-row">
+                <span>Profesiones</span>
+                <span>Ubicación</span>
+                <span>Años de experiencia</span>
+                <span>Preferencia de trabajo</span>
+                <span>Título</span>
+                <span>Cursos</span>
+                <span>Áreas de Conocimiento</span>
+              </div>
+            </div>
           </div>
 
           <div className="users-container">
@@ -158,15 +162,14 @@ export const ProfessList = () => {
                         ))
                       : "Falta por rellenar"}
                   </span>
+                  {user._id !== auth.id && (
+                    <button
+                      className="offer-btn"
+                      onClick={() => handleOfferRequest(user)}>
+                      Solicitar oferta
+                    </button>
+                  )}
                 </div>
-                {user._id !== auth.id && (
-                  <button
-                    className="config-btn"
-                    onClick={() => handleOfferRequest(user)}
-                  >
-                    Solicitar oferta
-                  </button>
-                )}
               </div>
             ))}
           </div>

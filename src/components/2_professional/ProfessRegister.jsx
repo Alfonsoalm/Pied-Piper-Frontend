@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { TagsInput } from "../common/TagsInput.jsx";  // Importamos el componente de etiquetas
+import { TagsInput } from "../0_common/TagsInput.jsx";  // Importamos el componente de etiquetas
 import { useForm } from "../../hooks/useForm.jsx";
 import { Global } from "../../helpers/Global.jsx";
 
-export const UserRegister = () => {
+export const ProfessRegister = () => {
   const { form, changed } = useForm({});
   const [professions, setProfessions] = useState([]);  // Manejar profesiones como etiquetas
   const [saved, setSaved] = useState("not_sended");

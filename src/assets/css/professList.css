@@ -1,26 +1,44 @@
-.user-header-row {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  font-weight: bold;
-  margin-left: 16px;
-  margin-right: 16px;
-  padding: 10px 0;
-  text-align: center; /* Centra el texto horizontalmente */
-}
-
-.users-container {
+/* Cabeceras de la lista de profesionales */
+.users-title-container {
   display: flex;
-  flex-direction: column; /* Asegurar disposición vertical */
-  gap: 15px; /* Espacio entre tarjetas */
-  width: 100%; /* Asegurar que el contenedor ocupe todo el ancho */
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 10px 0;
+  padding: 0 16px;
 }
 
-.user-card {
+.user-title-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  padding: 10px;
+  width: 100%;
+  max-width: none;
+}
+
+.user-title-info-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 0;
+  text-align: center;
+}
+
+/* Contenedor general para los profesionales */
+.users-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 10px 0;
+  padding: 0 16px;
+}
+
+/* Estilo de las tarjetas */
+.user-card {
   padding: 16px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -29,39 +47,34 @@
   max-width: none; /* Eliminar cualquier límite de ancho */
 }
 
+.user-card span {
+  margin: 0;
+  font-size: 18px;
+  text-align: center; /* Centrar texto */
+}
 
 .user-info-row {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   padding: 5px 0;
-  text-align: center; /* Centra el texto horizontalmente */
+  justify-items: center;
 }
 
-
-.general-info__container-avatar {
-  margin-bottom: 10px;
-}
-
-.avatar-img,
-.container-avatar__img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-.config-btn {
-  margin-top: 10px;
-  padding: 5px 15px;
+.offer-btn {
+  margin-top: 0px;
+  height: 70px;
+  padding: 12px;
+  font-size: 15px;
   border-radius: 20px;
-  background-color: #007bff;
+  background-color: var(--color-backgroud-navbar);
   color: white;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.config-btn:hover {
+.offer-btn:hover {
   background-color: #0056b3;
 }
 

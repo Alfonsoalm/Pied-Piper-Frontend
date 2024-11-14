@@ -107,20 +107,22 @@ select {
 
 .config-btn,
 input[type="submit"].config-btn {
-  background-color: var(--color-hover-navbar);
+  background-color: var(--color-backgroud-navbar);
   color: var(--color-text-navbar) !important;
-  padding: 0.3rem 0.7rem; /* Tamaño ajustado */
+  padding: 12px;
   margin-bottom: 5px;
-  border: 1px solid var(--color-text-navbar);
+  border-radius: 20px;
   border-radius: 15px; /* Borde redondeado */
-  font-size: 0.9rem; /* Tamaño de fuente ajustado */
+  font-size: 15px; /* Tamaño de fuente ajustado */
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
 .config-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  background-color: #0056b3;
 }
+
 
 /* Estilo adicional para ubicaciones preferidas */
 .config-preferred-locations {

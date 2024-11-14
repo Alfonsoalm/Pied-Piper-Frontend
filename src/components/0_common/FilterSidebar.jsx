@@ -53,8 +53,8 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
 
   // Filtros específicos para sectors (empresas)
   const renderCompanyFilters = () => (
-    <>
-      <div className="filter-group">
+    <form className="form">
+      <div className="form-group">
         <label htmlFor="name">Filtrar por nombre</label>
         <input
           type="text"
@@ -65,7 +65,7 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
           placeholder="Buscar por nombre de empresa"
         />
       </div>
-      <div className="filter-group">
+      <div className="form-group">
         <label htmlFor="location">Filtrar por ubicación</label>
         <input
           type="text"
@@ -76,7 +76,7 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
           placeholder="Buscar por ubicación"
         />
       </div>
-      <div className="filter-group">
+      <div className="form-group">
         <label htmlFor="rating">Filtrar por valoración</label>
         <input
           type="number"
@@ -89,13 +89,13 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
           max="5"
         />
       </div>
-    </>
+    </form>
   );
 
   // Filtros específicos para profiles (profesionales)
   const renderProfessionalFilters = () => (
-    <>
-      <div className="filter-group">
+    <form className="form">
+      <div className="form-group">
         <label htmlFor="profession">Filtrar por profesión</label>
         <input
           type="text"
@@ -107,7 +107,7 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
         />
       </div>
 
-      <div className="filter-group">
+      <div className="form-group">
         <label htmlFor="location">Filtrar por ubicación</label>
         <input
           type="text"
@@ -119,7 +119,7 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
         />
       </div>
 
-      <div className="filter-group">
+      <div className="form-group">
         <label htmlFor="experience_years">Filtrar por años de experiencia</label>
         <input
           type="number"
@@ -132,7 +132,7 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
         />
       </div>
 
-      <div className="filter-group">
+      <div className="form-group">
         <label htmlFor="work_preference">Filtrar por preferencia de trabajo</label>
         <select
           id="work_preference"
@@ -147,7 +147,7 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
         </select>
       </div>
 
-      <div className="filter-group">
+      <div className="form-group">
         <label htmlFor="title">Filtrar por título</label>
         <input
           type="text"
@@ -159,7 +159,7 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
         />
       </div>
 
-      <div className="filter-group">
+      <div className="form-group">
         <label htmlFor="courses">Filtrar por cursos</label>
         <input
           type="text"
@@ -171,7 +171,7 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
         />
       </div>
 
-      <div className="filter-group">
+      <div className="form-group">
         <label htmlFor="knowledge_area">Filtrar por áreas de conocimiento</label>
         <input
           type="text"
@@ -182,7 +182,7 @@ export const FilterSidebar = ({ context, onFilterChange }) => {
           placeholder="Buscar por áreas de conocimiento"
         />
       </div>
-    </>
+    </form>
   );
 
   return (

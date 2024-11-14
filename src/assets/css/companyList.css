@@ -1,29 +1,42 @@
-.companies-header-row {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  font-weight: bold;
-  padding: 10px 0;
-  margin-left: 16px;
-  margin-right: 16px;
-  text-align: center;
-}
-
-/* Estilos generales para contenedores */
-.companies-container {
+/* Cabeceras de la lista de empresas */
+.companies-title-container {
   display: flex;
   flex-wrap: wrap;
   gap: 16px; /* Espacio entre las tarjetas */
-  margin: 20px 0;
+  margin: 10px 0;
   padding: 0 16px;
 }
-
-/* Estilo de las tarjetas */
-.company-card {
+.company-title-card{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  padding: 10px;
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+  max-width: none; /* Eliminar cualquier límite de ancho */
+}
+.company-title-info-row{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 0;
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+
+/* Estilos generales para contenedores de las empresas */
+.companies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Espacio entre las tarjetas */
+  margin: 10px 0;
+  padding: 0 16px;
+}
+/* Estilo de las tarjetas */
+.company-card {
   padding: 16px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -31,21 +44,28 @@
   width: 100%; /* Ocupa el 100% del ancho del contenedor */
   max-width: none; /* Eliminar cualquier límite de ancho */
 }
-
 .company-info-row {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   padding: 5px 0;
-  text-align: center; /* Centra el texto horizontalmente */
+  justify-items: center;
 }
-
 .company-image-container {
-  width: 150px;
+  width: 90px;
+  height: 90px; /* Ajustar el alto para hacer un contenedor cuadrado */
   display: flex;
   justify-content: center;
-  align-items: center;
+  overflow: hidden; /* Ocultar cualquier parte de la imagen que se desborde */
+  border-radius: 50%; /* Esto hace que la imagen tenga un borde redondeado si es necesario */
+  background-color: #f5f5f5; /* Color de fondo opcional para resaltar la imagen */
 }
+.company-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen se mantenga proporcionada y rellene el contenedor */
+}
+
 
 .company-card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -59,12 +79,16 @@
   text-align: center; /* Centrar texto */
 }
 
-
 .company-card p {
   margin: 0;
   font-size: 14px;
   color: #555;
   text-align: center; /* Centrar texto */
+}
+
+.view-details-btn{
+  margin: 20px;
+  padding: 5px;
 }
 
 /* Opcional: Ajuste de tamaño en pantallas más pequeñas */
