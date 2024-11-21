@@ -35,6 +35,7 @@ export const PrivateLayout = () => {
   };
 
   const layoutClass = auth.legal_id ? "company-layout" : "professional-layout";
+  const layoutAsideClass = auth.legal_id ? "company-aside-layout" : "professional-aside-layout";
 
   if (loading) {
     return <h1>Cargando...</h1>;
@@ -52,7 +53,7 @@ export const PrivateLayout = () => {
           />
         ) : filterContext ? (
           <FilterSidebar
-            className="layout__aside"
+            className={`layout__aside ${layoutAsideClass}`}
             context={filterContext}
             onFilterChange={handleFilterChange}
           />

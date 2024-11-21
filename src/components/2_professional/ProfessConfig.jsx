@@ -37,8 +37,40 @@ export const ProfessConfig = () => {
   );
   const [titles, setTitles] = useState(auth.professional_info?.titles || []);
   const [courses, setCourses] = useState(auth.professional_info?.courses || []);
-  
 
+  const handleKnowledgeAreaChange = (area, value) => {
+    setKnowledgeAreas((prevAreas) => ({
+      ...prevAreas,
+      [area]: value > 5 ? 5 : value < 1 ? 1 : value, // Limitar valores de 1 a 5
+    }));
+  };
+
+  const removeKnowledgeArea = (area) => {
+    setKnowledgeAreas((prevAreas) => {
+      const updatedAreas = { ...prevAreas };
+      delete updatedAreas[area];
+      return updatedAreas;
+    });
+  };
+
+  const addCourse = () => {
+    const newCourse = prompt("Ingrese un nuevo curso:");
+    if (newCourse) setCourses([...courses, newCourse]);
+  };
+
+  const removeCourse = (index) => {
+    setCourses(courses.filter((_, i) => i !== index));
+  };
+
+  const addTitle = () => {
+    const newTitle = prompt("Ingrese un nuevo título:");
+    if (newTitle) setTitles([...titles, newTitle]);
+  };
+
+  const removeTitle = (index) => {
+    setTitles(titles.filter((_, i) => i !== index));
+  };
+  
   return (
     <>
       {/* Campos específicos para usuarios */}

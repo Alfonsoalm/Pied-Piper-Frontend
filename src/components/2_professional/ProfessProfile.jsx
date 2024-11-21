@@ -35,41 +35,107 @@ export const ProfessProfile = () => {
     return <p>No se encontró el perfil del usuario.</p>;
   }
 
+  const {
+    professions,
+    location,
+    bio,
+    professional_info: {
+      experience_years,
+      knowledge_areas,
+      salary_range,
+      schedule_preference,
+      custom_schedule,
+      preferred_locations,
+      distance_range_km,
+      work_preference,
+      titles,
+      courses,
+    } = {},
+  } = user;
+
+  const formattedSalaryRange = salary_range ? `${salary_range[0]} - ${salary_range[1]} €` : "N/A";
+
   return (
-    <div className="profile-info__user">
-      <h2>Información Profesional</h2>
-      <div className="general-info__container-avatar">
-        {user.image && user.image !== "default.png" ? (
-            <img
-            src={Global.url + "user/avatar/" + user.image}
-            className="container-avatar__img"
+    <div className="profile-container">
+      {/* SECCIÓN PRINCIPAL */}
+      <div className="profile-header">
+        <div className="background-banner"></div>
+        <div className="avatar-container">
+          <img
+            src={
+              user.image && user.image !== "default.png"
+                ? Global.url + "user/avatar/" + user.image
+                : "default-avatar-url" // Cambia esto por una URL válida
+            }
             alt="Foto de perfil"
-            />
-        ) : (
-            <img
-            src={avatar}
-            className="container-avatar__img"
-            alt="Foto de perfil"
-            />
-        )}
+            className="profile-avatar"
+          />
+        </div>
+        <div className="profile-info">
+          <h1 className="profile-name">{user.name || "N/A"} {user.surname || "N/A"}</h1>
+          <p className="profile-professions">
+            {professions ? professions.join(" | ") : "Sin profesiones registradas"}
+          </p>
+          <p className="profile-location">
+            {location || "Ubicación no especificada"}
+          </p>
+          <div className="profile-description">
+            <p>{bio || "Descripción no disponible"}</p>
+          </div>
+
+          <div className="btn-profile">
+            <button className="btn-contact-info">
+              Contactar
+            </button>
+            <button className="btn-contact-info">
+              Descargar CV
+            </button>
+          </div>
+
+        </div>
       </div>
-      <p><strong>Profesiones:</strong> {user.professions?.join(", ") || "N/A"}</p>
-      <p><strong>Ubicación:</strong> {user.location || "N/A"}</p>
-      <p><strong>Experiencia:</strong> {user.professional_info?.experience_years || "N/A"} años</p>
-      <p><strong>Preferencia de Trabajo:</strong> {user.professional_info?.work_preference || "N/A"}</p>
-      <p><strong>Títulos:</strong> {user.professional_info?.titles?.join(", ") || "N/A"}</p>
-      <p><strong>Cursos:</strong> {user.professional_info?.courses?.join(", ") || "N/A"}</p>
-      <p><strong>Áreas de Conocimiento:</strong></p>
-      <ul>
-        {user.professional_info?.knowledge_areas
-          ? Object.entries(user.professional_info.knowledge_areas).map(
-              ([area, value]) => (
+
+      {/* SECCIÓN DE INFORMACIÓN PROFESIONAL */}
+      <div className="profile-professional-section">
+        <h2>Información Profesional</h2>
+        <p><strong>Experiencia:</strong> {experience_years || "N/A"} años</p>
+        <p><strong>Títulos:</strong> {titles?.length ? titles.join(", ") : "N/A"}</p>
+        <p><strong>Cursos:</strong> {courses?.length ? courses.join(", ") : "N/A"}</p>
+        <h3>Áreas de Conocimiento</h3>
+        <ul>
+          {knowledge_areas
+            ? Object.entries(knowledge_areas).map(([area, value]) => (
                 <li key={area}>
                   {area}: {value}/5
                 </li>
-          ))
-          : "N/A"}
-      </ul>
+              ))
+            : <li>N/A</li>}
+        </ul>
+      </div>
+
+      {/* SECCIÓN DE CONDICIONES LABORALES */}
+      <div className="profile-conditions-section">
+        <h2>Condiciones Laborales</h2>
+        <p><strong>Preferencia de Trabajo:</strong> {work_preference || "N/A"}</p>
+        <p><strong>Rango Salarial:</strong> {formattedSalaryRange}</p>
+        <p><strong>Horario Preferido:</strong> {schedule_preference || "N/A"}</p>
+        {custom_schedule && <p><strong>Horario Personalizado:</strong> {custom_schedule}</p>}
+        {work_preference !== "remote" && (
+          <>
+            <p><strong>Ubicaciones Preferidas:</strong></p>
+            <ul className="preferred-locations-list">
+              {preferred_locations?.length
+                ? preferred_locations.map((location, index) => (
+                    <li key={index}>
+                      <i className="location-icon">📍</i> {location}
+                    </li>
+                  ))
+                : <li>N/A</li>}
+            </ul>
+          </>
+        )}
+        <p><strong>Distancia Máxima:</strong> {distance_range_km ? `${distance_range_km} km` : "N/A"}</p>
+      </div>
     </div>
   );
 };

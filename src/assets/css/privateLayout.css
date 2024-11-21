@@ -65,14 +65,15 @@
 
 .layout__aside {
     grid-area: aside;
-    background-color: #e9f5e9;
     padding: 1.5rem;
     border-right: 1px solid #ddd;
+    background-color: var(--color-background);
     height: auto; /* Ajusta la altura del sidebar */
     margin-top: 6rem; /* Compensar la altura del header fijo */
     position: sticky;
     top: 0;
 }
+
 
 /* TAGSINPUT */
 .tags-input-container {
