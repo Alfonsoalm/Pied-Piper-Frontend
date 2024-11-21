@@ -95,17 +95,6 @@
   font-size: 20px;
 }
 
-.btn-success {
-  width: 100%;
-  padding: 12px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
 .btn-success:hover {
   background-color: #218838;

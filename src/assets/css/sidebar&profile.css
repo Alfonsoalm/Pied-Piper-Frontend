@@ -6,7 +6,7 @@
 }
 
 .aside__profile-info{
-    border: 1px solid var(--color-border-post);
+    border: 1px solid var(--post-border-color);
     padding: 2.5rem;
     margin-bottom: 2rem;
     border-radius: 0.4rem;
@@ -42,12 +42,12 @@
 }
 
 .container-names__name{
-    color: var( --color-text-black);
+    color: var(--text-nickname-color);
     font-size: 1.6rem;
 }
 
 .container-names__nickname{
-    color: var( --color-text-nickname);
+    color: var(--text-nickname-color);
     font-size: 1.6rem;
 }
 
@@ -56,7 +56,7 @@
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
-    border-top: 1px solid var(--color-border-headers);
+    border-top: 1px solid var(--headers-border-color);
 }
 
 .stats__following:first-child{
@@ -78,17 +78,17 @@
 
 .following__number{
     font-weight: bold;
-    color: var(--color-number-stats);
+    color: var(--number-stats-color);
 }
 
 .following__link:hover >  .following__number{
-    color: var(--color-hover-navbar);
+    color: var(--main-profess-color);
 }
 
 
 .aside__container-form{
     width: 100%;
-    border: 1px solid var(--color-border-post);
+    border: 1px solid var(--post-border-color);
     padding: 2.5rem;
     border-radius: 0.4rem;
 }
@@ -142,7 +142,6 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus
 textarea:focus{
-    border-color: var(--color-border-textarea-focus);
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
 }
 
@@ -150,16 +149,13 @@ textarea:focus{
     width: 100%;
 }
 
-
-.form-post__btn-submit,
-input[type="submit"]{
-    background-color: var(--color-background-btn-success);
-    color: var(--color-text-navbar) !important;
+.form-post__btn-submit{
+    background-color: var(--success-btn-background-color);
+    color: var( --white-color) !important;
     padding: 0.2rem 0.7rem;
     margin: 0.2rem;
-    border: 1px solid var(--color-border-btn-success);
+    border: 1px solid var(--success-btn-border-color);
     border-radius: 0.3rem;
-    font-size: 1.2rem;
     line-height: 1.5;
     cursor: pointer;
     font-size: 1.4rem;

@@ -1,31 +1,4 @@
 
-/*ESTILOS GENERALES*/
-:root {
-    --color-general-text: #333;
-    --color-backgroud-navbar: #131a5c;
-    --color-text-navbar: white;
-    --color-hover-navbar: #1756cc;
-    --color-border-headers: #eee;
-    --color-background-btn-success: #5cb85c;
-    --color-border-btn-success: #4cae4c;
-    --color-background-btn-success-hover: #449d44;
-    --color-border-btn-success-hover: #398439;
-    --color-background-btn-delete: #d9534f;
-    --color-border-btn-delete: #d43f3a;
-    --color-background-btn-delete-hover: #c9302c;
-    --color-border-btn-delete-hover: #ac2925;
-    --color-border-post: #ddd;
-    --color-name-user: #337ab7;
-    --color-text-black: #555;
-    --color-text-nickname: #969393;
-    --color-number-stats: green;
-    --color-border-textarea: #ccc;
-    --color-border-textarea-focus: #66afe9;
-}
-
-
-
-
 .config-form {
   width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
   max-width: 100%; /* Elimina cualquier restricción de ancho máximo */
@@ -107,8 +80,8 @@ select {
 
 .config-btn,
 input[type="submit"].config-btn {
-  background-color: var(--color-backgroud-navbar);
-  color: var(--color-text-navbar) !important;
+  background-color: var(--navbar-background-color);
+  color: var( --white-color) !important;
   padding: 12px;
   margin-bottom: 5px;
   border-radius: 20px;

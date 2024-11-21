@@ -84,7 +84,7 @@ export const ProfessRegister = () => {
 
           {passwordError && <div className="alert alert-error">{passwordError}</div>} {/* Mostrar error si hay */}
 
-          <button type="submit" className="btn-success">Registrate</button>
+          <button type="submit" className="register-form-btn">Registrate</button>
         </form>
       </div>
     </div>

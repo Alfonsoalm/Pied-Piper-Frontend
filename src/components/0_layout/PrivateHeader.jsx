@@ -10,7 +10,7 @@ export const Header = () => {
     <header className="layout__navbar">
       {/* Contenedor del título y slogan */}
       <div className="navbar__header">
-        <a href="#" className="navbar__title">
+        <a href="/home" className="navbar__title">
           <i className="fab fa-pied-piper navbar__icon"></i> Pied Piper
         </a>
         <p className="navbar__slogan">Here don't find the job, The job finds you</p>
@@ -47,6 +47,12 @@ export const Header = () => {
             <NavLink to="/social/messages" className="menu-list__link">
               <i className="fa-solid fa-envelope navbar__icon"></i>
               <span className="menu-list__title">Mensajes</span>
+            </NavLink>
+          </li>
+          <li className="menu-list__item">
+            <NavLink to="/social/myOffers" className="menu-list__link">
+              <i className="fa-solid fa-envelope-open-text navbar__icon"></i>
+              <span className="menu-list__title">Mis Ofertas</span>
             </NavLink>
           </li>
           <li className="menu-list__item">

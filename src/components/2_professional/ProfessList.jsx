@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useOutletContext } from "react-router-dom";
+import { useParams, useOutletContext, useNavigate } from "react-router-dom";
 import { Global } from "../../helpers/Global.jsx";
 import useAuth from "../../hooks/useAuth.jsx";
 
@@ -22,6 +22,7 @@ export const ProfessList = () => {
   const [filteredUsers, setFilteredUsers] = useState([]);
   const { filters, setActiveOffer } = useOutletContext(); // Obtener setActiveOffer del contexto
   const { auth } = useAuth();
+  const navigate = useNavigate();
 
   const fetchUsers = async () => {
     try {
@@ -121,6 +122,10 @@ export const ProfessList = () => {
     setActiveOffer({ user }); // Establecer la oferta activa
   };
 
+  const handleProfileRedirect = (userId) => {
+    navigate(`/social/perfil/profesional/${userId}`);
+  };
+
   return (
     <div>
       <h1>{profession}</h1>
@@ -148,11 +153,11 @@ export const ProfessList = () => {
               <div key={index} className="user-card">
                 <div className="user-info-row">
                   <span>{user.professions.join(", ")}</span>
-                  <span>{user.location || "Falta por rellenar"}</span>
-                  <span>{user.professional_info?.experience_years || "Falta por rellenar"}</span>
-                  <span>{user.professional_info?.work_preference || "Falta por rellenar"}</span>
-                  <span>{(user.professional_info?.titles && user.professional_info.titles.join(", ")) || "Falta por rellenar"}</span>
-                  <span>{(user.professional_info?.courses && user.professional_info.courses.join(", ")) || "Falta por rellenar"}</span>
+                  <span>{user.location || "-"}</span>
+                  <span>{user.professional_info?.experience_years || "-"}</span>
+                  <span>{user.professional_info?.work_preference || "-"}</span>
+                  <span>{(user.professional_info?.titles && user.professional_info.titles.join(", ")) || "-"}</span>
+                  <span>{(user.professional_info?.courses && user.professional_info.courses.join(", ")) || "-"}</span>
                   <span>
                     {user.professional_info?.knowledge_areas && Object.keys(user.professional_info.knowledge_areas).length > 0
                       ? Object.entries(user.professional_info.knowledge_areas).map(([area, value]) => (
@@ -160,15 +165,26 @@ export const ProfessList = () => {
                             <strong>{area}:</strong> {renderStars(value)}
                           </div>
                         ))
-                      : "Falta por rellenar"}
+                      : "-"}
                   </span>
+
+                  <span className="button-column">
                   {user._id !== auth.id && (
-                    <button
-                      className="offer-btn"
-                      onClick={() => handleOfferRequest(user)}>
-                      Solicitar oferta
-                    </button>
+                    <>
+                      <button
+                        className="offer-btn"
+                        onClick={() => handleOfferRequest(user)}>
+                        Solicitar oferta
+                      </button>
+                      <button
+                        className="profile-btn"
+                        onClick={() => handleProfileRedirect(user._id)}>
+                        Ver perfil
+                      </button>
+                    </>
                   )}
+                  </span>
+
                 </div>
               </div>
             ))}

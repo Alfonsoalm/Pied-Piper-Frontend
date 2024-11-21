@@ -152,7 +152,7 @@ export const Config = () => {
           <input
             type="submit"
             value="Actualizar"
-            className="config-btn config-btn-success"
+            className="config-btn config-"
           />
         </form>
       </div>

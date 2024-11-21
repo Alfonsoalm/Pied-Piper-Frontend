@@ -1,31 +1,29 @@
 /*ESTILOS GENERALES*/
 :root {
-    --color-general-text: #333;
-    --color-backgroud-navbar: #131a5c;
-    --color-text-navbar: white;
-    --color-hover-navbar: #1756cc;
+    --general-text-color: #333;
+    --navbar-background-color: #131a5c;
 
-    --color-border-headers: #eee;
+    --success-btn-border-color: #4cae4c;
+    --success-btn-border-hover-color: #398439;
+    --success-btn-background-color: #0a0e0a;
+    --success-btn-background-hover-color: #449d44;
 
-    --color-background-btn-success: #0a0e0a;
-    --color-border-btn-success: #4cae4c;
-    --color-background-btn-success-hover: #449d44;
-    --color-border-btn-success-hover: #398439;
-
-    --color-background-btn-delete: #d9534f;
-    --color-border-btn-delete: #d43f3a;
-    --color-background-btn-delete-hover: #c9302c;
-    --color-border-btn-delete-hover: #ac2925;
-
-    --color-border-post: #ddd;
-    --color-name-user: #337ab7;
-
-    --color-text-black: #555;
-    --color-text-nickname: #969393;
-    --color-number-stats: green;
-
-    --color-border-textarea: #ccc;
-    --color-border-textarea-focus: #66afe9;
+    --delete-btn-border-color: #d43f3a;
+    --delete-btn-border-hover-color: #ac2925;
+    --delete-btn-background-color: #d9534f;
+    --delete-btn-background-hover-color: #c9302c;
+    
+    --headers-border-color: #eee;
+    --slogan-color: #ddd;
+    --post-border-color: #ddd;
+    --white-color: #fff;
+    --text-nickname-color: #969393;
+    --number-stats-color: #1756cc;
+    --main-profess-color: #1756cc;
+    --name-user-color: #337ab7;
+    --yellow-hover-color: #ffdd57;
+    --number-stats-color: #000;
+    --black-color: #000;
 
 }
 
@@ -48,8 +46,8 @@ body {
     width: 100%;
     height: 100%;
     font-size: 14px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: var(--color-general-text);
+    font-family: 'Roboto', sans-serif;
+    color: var(--general-text-color);
 }
 
 .layout {

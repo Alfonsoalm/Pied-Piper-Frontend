@@ -7,14 +7,13 @@
     justify-content: center;
     width: 100%;
     min-height: 100vh;
-    padding: 20px;
     background-color: #f9f9f9;
 }
 
 .public-layout__header {
     width: 100%;
-    background-color: var(--color-backgroud-navbar);
-    color: var(--color-text-navbar);
+    background-color: var(--navbar-background-color);
+    color: var( --white-color);
     padding: 1rem;
     text-align: center;
 }

@@ -103,7 +103,7 @@ export const Login = () => {
           <input
             type="submit"
             value="Identificate"
-            className="login-form-button btn-success"
+            className="login-form-btn"
           />
         </form>
       </div>

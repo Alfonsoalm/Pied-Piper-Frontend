@@ -22,6 +22,8 @@ import { Profile } from "../components/0_common/Profile.jsx";
 import { Offers } from "../components/0_common/Offers.jsx";
 import { Messages } from "../components/0_common/Messages.jsx";
 import { Logout } from "../components/0_common/Logout.jsx";
+import { MyOffers } from "../components/0_common/MyOffers.jsx"; // Importar el nuevo componente
+import { Home } from "../components/0_layout/Home.jsx";
 
 export const Routing = () => {
   return (
@@ -30,6 +32,7 @@ export const Routing = () => {
         <Routes>
           <Route path="/" element={<PublicLayout />}>
             <Route index element={<Login />} />
+            <Route path="/home" element={<Home />} />◘
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Register />} />
             <Route path="/registro/profesional" element={<ProfessRegister/>} /> 
@@ -39,21 +42,18 @@ export const Routing = () => {
           <Route path="/social" element={<PrivateLayout />}>
             <Route index element={<Feed />} />
             <Route path="feed" element={<Feed />} />
-
+            <Route path="offers" element={<Offers />} />
             <Route path="sectors" element={<CompanySectors />} />
             <Route path="sectors/:sector" element={<CompanyList />} />
-
             <Route path="profiles" element={<ProfessProfiles />} />
             <Route path="profiles/:profession" element={<ProfessList />} />
-
-            <Route path="offers" element={<Offers />} />
             <Route path="messages" element={<Messages />} />
-            <Route path="gente" element={<People />} />
+            <Route path="myOffers" element={<MyOffers />} />
 
+            <Route path="gente" element={<People />} />
             <Route path="perfil/:userId" element={<Profile />} /> 
             <Route path="perfil/empresa/:userId" element={<CompanyProfile />} /> 
             <Route path="perfil/profesional/:userId" element={<ProfessProfile />} /> 
-
             <Route path="ajustes" element={<Config />} />
             <Route path="siguiendo/:userId" element={<Following />} />
             <Route path="seguidores/:userId" element={<Followers />} />

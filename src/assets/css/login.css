@@ -24,6 +24,28 @@
     margin-bottom: 1.5rem;
 }
 
+.login-form-btn{
+  margin-top: 0px;
+  width: 130px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: var(--navbar-background-color);
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form-btn:hover{
+  color: var(--white-color);
+  outline: 2px solid var(--white-color);
+  outline-offset: -5px; /* Hace que el borde se meta dentro del botón */
+  background-color: var(
+    --navbar-background-color
+  ); /* Mantén el fondo sin cambios */
+}
+
 /* Estilo del contenedor de la palanca (toggle) */
 .toggle-container {
     display: flex;

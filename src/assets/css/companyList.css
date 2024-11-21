@@ -37,6 +37,10 @@
 }
 /* Estilo de las tarjetas */
 .company-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 16px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -86,9 +90,25 @@
   text-align: center; /* Centrar texto */
 }
 
-.view-details-btn{
-  margin: 20px;
-  padding: 5px;
+.view-details-btn {
+  margin-top: 0px;
+  width: 100px;
+  height: 70px;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: var(--navbar-background-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-btn:hover {
+  color: white;
+  outline: 2px solid white; /* Borde interno */
+  outline-offset: -5px; /* Hace que el borde se meta dentro del botón */
+  background-color: var(--navbar-background-color); /* Mantén el fondo sin cambios */
 }
 
 /* Opcional: Ajuste de tamaño en pantallas más pequeñas */

@@ -21,10 +21,10 @@
 }
 
 .content__button{
-    background-color: var(--color-background-btn-success);
-    color: var(--color-text-navbar);
+    background-color: var(--success-btn-background-color);
+    color: var( --white-color);
     padding: 0.5rem 1rem;
-    border: 1px solid var(--color-border-btn-success);
+    border: 1px solid var(--success-btn-border-color);
     border-radius: 0.3rem;
     font-size: 1.2rem;
     line-height: 1.5;
@@ -36,8 +36,8 @@
 }
 
 .content__button:hover, .content__btn-more-post:hover {
-    background-color: var(--color-background-btn-success-hover);
-    border-color: var(--color-border-btn-success-hover);
+    background-color: var(--success-btn-background-hover-color);
+    border-color: var(--success-btn-border-hover-color);
 }
 
 .content__posts{
@@ -51,7 +51,7 @@
     justify-content: space-between;
     margin-bottom: 2rem;
     border-radius: 0.4rem;
-    border: 1px solid var(--color-border-post);
+    border: 1px solid var(--post-border-color);
     padding: 1.5rem;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .user-info__name{
-    color: var(--color-name-user);
+    color: var(--name-user-color);
 }
 
 .user-info__create-date{
@@ -98,32 +98,32 @@
 }
 
 .post__button{
-    color: var(--color-text-navbar);
+    color: var( --white-color);
     padding: 1rem 1.5rem;
     font-size: 1.4rem;
     border-radius: 0.4rem;
-    background-color: var(--color-background-btn-delete);
-    border-color: var(--color-border-btn-delete);
+    background-color: var(--delete-btn-background-color);
+    border-color: var(--delete-btn-border-color);
 }
 
 .post__button--green{
-    background-color: var(--color-background-btn-success);
-    border-color: var(--color-border-btn-success);
+    background-color: var(--success-btn-background-color);
+    border-color: var(--success-btn-border-color);
 }
 
 .post__button--green:hover{
-    background-color: --color-background-btn-success-hover;
-    border-color: var(--color-border-btn-success);
+    background-color: --success-btn-background-hover-color;
+    border-color: var(--success-btn-border-color);
 }
 
 .post__button:hover{
-    background-color: var(--color-background-btn-delete-hover);
-    border-color: var(--color-border-btn-delete-hover);
+    background-color: var(--delete-btn-background-hover-color);
+    border-color: var(--delete-btn-border-hover-color);
 }
 
 .post__button--green:hover{
-    background-color:var(--color-background-btn-success-hover);
-    border-color:var(--color-border-btn-success-hover);
+    background-color:var(--success-btn-background-hover-color);
+    border-color:var(--success-btn-border-hover-color);
 }
 
 .content__container-btn{
@@ -133,10 +133,10 @@
 }
 
 .content__btn-more-post{
-    background-color: var(--color-background-btn-success);
-    color: var(--color-text-navbar);
+    background-color: var(--success-btn-background-color);
+    color: var( --white-color);
     padding: 0.5rem 1rem;
-    border: 1px solid var(--color-border-btn-success);
+    border: 1px solid var(--success-btn-border-color);
     border-radius: 0.3rem;
     font-size: 1.2rem;
     line-height: 1.5;

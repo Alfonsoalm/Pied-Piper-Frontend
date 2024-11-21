@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Global } from "../../helpers/Global.jsx";
+import avatar from "../../assets/img/user.png";
 
 export const ProfessProfile = () => {
   const [user, setUser] = useState(null);
@@ -61,15 +62,20 @@ export const ProfessProfile = () => {
       <div className="profile-header">
         <div className="background-banner"></div>
         <div className="avatar-container">
-          <img
-            src={
-              user.image && user.image !== "default.png"
-                ? Global.url + "user/avatar/" + user.image
-                : "default-avatar-url" // Cambia esto por una URL válida
-            }
-            alt="Foto de perfil"
-            className="profile-avatar"
-          />
+            {user.image != "default.png" && (
+            <img
+              src={Global.url + "user/avatar/" + user.image}
+              className="post__user-image"
+              alt="Foto de perfil"
+            />
+          )}
+          {user.image == "default.png" && (
+            <img
+              src={avatar}
+              className="post__user-image"
+              alt="Foto de perfil"
+            />
+          )}
         </div>
         <div className="profile-info">
           <h1 className="profile-name">{user.name || "N/A"} {user.surname || "N/A"}</h1>
@@ -83,11 +89,11 @@ export const ProfessProfile = () => {
             <p>{bio || "Descripción no disponible"}</p>
           </div>
 
-          <div className="btn-profile">
-            <button className="btn-contact-info">
+          <div className="profile-buttons-container">
+            <button className="contact-info-btn">
               Contactar
             </button>
-            <button className="btn-contact-info">
+            <button className="cv-download-btn">
               Descargar CV
             </button>
           </div>
@@ -101,7 +107,7 @@ export const ProfessProfile = () => {
         <p><strong>Experiencia:</strong> {experience_years || "N/A"} años</p>
         <p><strong>Títulos:</strong> {titles?.length ? titles.join(", ") : "N/A"}</p>
         <p><strong>Cursos:</strong> {courses?.length ? courses.join(", ") : "N/A"}</p>
-        <h3>Áreas de Conocimiento</h3>
+        <p><strong>Áreas de Conocimiento</strong></p>
         <ul>
           {knowledge_areas
             ? Object.entries(knowledge_areas).map(([area, value]) => (

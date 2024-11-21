@@ -61,21 +61,33 @@
   justify-items: center;
 }
 
-.offer-btn {
+.button-column {
+  display: flex;
+  flex-direction: column; /* Alinea botones en columna */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  gap: 10px; /* Espacio entre botones */
+}
+
+.offer-btn, .profile-btn {
   margin-top: 0px;
+  width: 100px;
   height: 70px;
   padding: 12px;
   font-size: 15px;
-  border-radius: 20px;
-  background-color: var(--color-backgroud-navbar);
-  color: white;
+  border-radius: 10px;
+  background-color: var(--navbar-background-color);
+  color: var(--white-color);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.offer-btn:hover {
-  background-color: #0056b3;
+.offer-btn:hover, .profile-btn:hover {
+  color: var(--white-color);
+  outline: 2px solid var(--white-color);
+  outline-offset: -5px; /* Hace que el borde se meta dentro del botón */
+  background-color: var(--navbar-background-color); /* Mantén el fondo sin cambios */
 }
 
 .stars-container {

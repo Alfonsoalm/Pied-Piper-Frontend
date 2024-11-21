@@ -22,6 +22,8 @@ import './assets/css/profiles.css';
 import './assets/css/professList.css';
 import './assets/css/companyList.css';
 import './assets/css/professProfile.css';
+import './assets/css/myOffers.css';
+import './assets/css/home.css';
 
 // Cargar configuracion react time ago
 import TimeAgo from 'javascript-time-ago'
