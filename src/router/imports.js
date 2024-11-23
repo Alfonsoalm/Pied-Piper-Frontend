@@ -1,0 +1,27 @@
+// imports.js
+export { default as React } from "react";
+export { Routes, Route, BrowserRouter, Link } from "react-router-dom";
+export { PublicLayout } from "../components/0_layout/PublicLayout.jsx";
+export { PrivateLayout } from "../components/0_layout/PrivateLayout.jsx";
+export { Login } from "../components/0_common/Login.jsx";
+export { Register } from "../components/0_common/Register.jsx";
+export { CompanyRegister } from "../components/1_company/CompanyRegister.jsx";
+export { ProfessRegister } from "../components/2_professional/ProfessRegister.jsx";
+export { Feed } from "../components/4_publication/Feed.jsx";
+export { AuthProvider } from "../context/AuthProvider.jsx";
+export { People } from "../components/0_common/People.jsx";
+export { Config } from "../components/0_common/Config.jsx";
+export { Following } from "../components/3_follow/Following.jsx";
+export { Followers } from "../components/3_follow/Followers.jsx";
+export { ProfessProfiles } from "../components/2_professional/ProfessProfiles.jsx";
+export { CompanySectors } from "../components/1_company/CompanySectors.jsx";
+export { CompanyList } from "../components/1_company/CompanyList.jsx";
+export { ProfessList } from "../components/2_professional/ProfessList.jsx";
+export { CompanyProfile } from "../components/1_company/CompanyProfile.jsx";
+export { ProfessProfile } from "../components/2_professional/ProfessProfile.jsx";
+export { Profile } from "../components/0_common/Profile.jsx";
+export { Offers } from "../components/0_common/Offers.jsx";
+export { Messages } from "../components/0_common/Messages.jsx";
+export { Logout } from "../components/0_common/Logout.jsx";
+export { MyOffers } from "../components/0_common/MyOffers.jsx";
+export { Home } from "../components/0_layout/Home.jsx";

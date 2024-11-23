@@ -48,44 +48,44 @@ export const CompanyRegister = () => {
         {saved === "error" && <div className="alert alert-error">Error al registrar empresa</div>}
 
         <form onSubmit={saveCompany}>
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="name">Nombre</label>
             <input type="text" name="name" onChange={changed} />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="legal_id">Numero de Identificación</label>
             <input type="text" name="legal_id" onChange={changed} />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="location">Localización</label>
             <input type="text" name="location" onChange={changed} />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="sectors">Sectores</label>
             <TagsInput tags={sectors} setTags={setSectors} placeholder="Añadir sectores y presionar Enter" />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="email">Correo Electrónico</label>
             <input type="email" name="email" onChange={changed} />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="password">Contraseña</label>
             <input type="password" name="password" onChange={handlePasswordChange} />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="repeatPassword">Repetir Contraseña</label>
             <input type="password" name="repeatPassword" onChange={handlePasswordChange} />
           </div>
 
           {passwordError && <div className="alert alert-error">{passwordError}</div>} {/* Mostrar error si hay */}
 
-          <button type="submit" className="register-form-btn">Registrar Empresa</button>
+          <button type="submit" className="register-form-btn">Registrarse</button>
         </form>
       </div>
     </div>

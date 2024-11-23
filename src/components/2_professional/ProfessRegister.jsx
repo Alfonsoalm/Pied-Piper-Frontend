@@ -47,44 +47,44 @@ export const ProfessRegister = () => {
         {saved === "error" && <div className="alert alert-error">Error al registrar usuario</div>}
 
         <form onSubmit={saveUser}>
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="name">Nombre</label>
             <input type="text" name="name" onChange={changed} required />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="surname">Apellidos</label>
             <input type="text" name="surname" onChange={changed} />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="email">Correo Electrónico</label>
             <input type="email" name="email" onChange={changed} required />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="birth_date">Fecha de Nacimiento</label>
             <input type="date" name="birth_date" onChange={changed} required />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="professions">Profesiones</label>
             <TagsInput tags={professions} setTags={setProfessions} placeholder="Añadir profesiones y presionar Enter" />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="password">Contraseña</label>
             <input type="password" name="password" onChange={handlePasswordChange} required />
           </div>
 
-          <div className="form-group">
+          <div className="register-form-group">
             <label htmlFor="repeatPassword">Repetir Contraseña</label>
             <input type="password" name="repeatPassword" onChange={handlePasswordChange} required />
           </div>
 
           {passwordError && <div className="alert alert-error">{passwordError}</div>} {/* Mostrar error si hay */}
 
-          <button type="submit" className="register-form-btn">Registrate</button>
+          <button type="submit" className="register-form-btn">Registrarse</button>
         </form>
       </div>
     </div>

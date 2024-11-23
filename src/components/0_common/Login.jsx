@@ -7,40 +7,60 @@ export const Login = () => {
   const { form, changed } = useForm({});
   const [saved, setSaved] = useState("not_sended");
   const { setAuth } = useAuth();
-  
-  // Nuevo estado para saber si es empresa
-  const [isCompany, setIsCompany] = useState(false);
 
   const loginUser = async (e) => {
     e.preventDefault();
 
     let userToLogin = form;
-    let loginEndpoint = isCompany ? "company/login" : "user/login"; // Dependiendo si es empresa o usuario
 
-    const request = await fetch(Global.url + loginEndpoint, {
-      method: "POST",
-      body: JSON.stringify(userToLogin),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    });
+    const attemptLogin = async (endpoint) => {
+      try {
+        const response = await fetch(Global.url + endpoint, {
+          method: "POST",
+          body: JSON.stringify(userToLogin),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        });
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error(`Error intentando loguear en ${endpoint}:`, error);
+        return null;
+      }
+    };
 
-    const data = await request.json();
-
-    console.log(data);
-
-    if (data.status === "success") {
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+    const companyLogin = await attemptLogin("company/login");
+    if (companyLogin && companyLogin.status === "success") {
+      localStorage.setItem("token", companyLogin.token);
+      localStorage.setItem("user", JSON.stringify(companyLogin.user));
       setSaved("login");
-      setAuth(data.user);
+      setAuth(companyLogin.user);
       setTimeout(() => {
         window.location.reload();
       }, 100);
-    } else {
-      setSaved("error");
+      return;
     }
+
+    const userLogin = await attemptLogin("user/login");
+    if (userLogin && userLogin.status === "success") {
+      localStorage.setItem("token", userLogin.token);
+      localStorage.setItem("user", JSON.stringify(userLogin.user));
+      setSaved("login");
+      setAuth(userLogin.user);
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
+      return;
+    }
+
+    setSaved("error");
+  };
+
+  // Función para manejar "¿Olvidaste tu contraseña?"
+  const handleForgotPassword = () => {
+    console.log("Redirigiendo al proceso de recuperación de contraseña...");
   };
 
   return (
@@ -85,24 +105,23 @@ export const Login = () => {
               className="login-form-input"
             />
           </div>
-
-          {/* Agregar opción para seleccionar si es empresa o usuario */}
-          <div className="login-form-group">
-            <label htmlFor="isCompany" className="login-form-label">
-              ¿Eres una empresa?
-            </label>
-            <input
-              type="checkbox"
-              name="isCompany"
-              checked={isCompany}
-              onChange={() => setIsCompany(!isCompany)}
-              className="login-form-input"
-            />
+          
+          {/* Enlace para "¿Olvidaste tu contraseña?" */}
+          <div className="login-forgot-password">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault(); // Evitar recarga de página
+                handleForgotPassword();
+              }}
+              className="forgot-password-link">
+              ¿Olvidaste tu contraseña?
+            </a>
           </div>
 
           <input
             type="submit"
-            value="Identificate"
+            value="Identifícate"
             className="login-form-btn"
           />
         </form>
