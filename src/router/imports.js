@@ -25,3 +25,4 @@ export { Messages } from "../components/0_common/Messages.jsx";
 export { Logout } from "../components/0_common/Logout.jsx";
 export { MyOffers } from "../components/0_common/MyOffers.jsx";
 export { Home } from "../components/0_layout/Home.jsx";
+export { VerifiedSuccess } from '../components/0_layout/VerifySuccess';

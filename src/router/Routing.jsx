@@ -1,6 +1,6 @@
 import * as Imports from './imports';
 const { React, BrowserRouter, AuthProvider, Routes, Route, Link, PublicLayout, Login, 
-  Home, Register, ProfessRegister, CompanyRegister, PrivateLayout, Feed, Offers,
+  Home, Register,  ProfessRegister, CompanyRegister, VerifiedSuccess, PrivateLayout, Feed, Offers,
   CompanySectors, CompanyList, ProfessProfiles, ProfessList, Messages, MyOffers, People, 
   Profile, CompanyProfile, ProfessProfile, Config, Following, Followers, Logout
  } = Imports;
@@ -18,6 +18,7 @@ export const Routing = () => {
             <Route path="/registro" element={<Register />} />
             <Route path="/registro/profesional" element={<ProfessRegister/>} /> 
             <Route path="/registro/empresa" element={<CompanyRegister />} /> 
+            <Route path="/verified-success" element={<VerifiedSuccess />} />
           </Route>
 
           <Route path="/social" element={<PrivateLayout />}>
