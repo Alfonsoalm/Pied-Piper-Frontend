@@ -10,14 +10,11 @@ export const Logout = () => {
     useEffect(() => {
         //Vaciar el localStorage
         localStorage.clear();
-
         //Setear estado global a vacio
         setAuth({});
         setCounters({});
-
         //Redireccion al login
         navigate("/login");
-
     })
 
   return (

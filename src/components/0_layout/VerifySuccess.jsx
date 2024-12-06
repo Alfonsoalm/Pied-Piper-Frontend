@@ -1,6 +1,6 @@
 import React from "react";
 
-const VerifiedSuccess = () => {
+export const VerifiedSuccess = () => {
   return (
     <div className="verified-success">
       <h1>¡Correo verificado con éxito!</h1>
@@ -9,5 +9,3 @@ const VerifiedSuccess = () => {
     </div>
   );
 };
-
-export default VerifiedSuccess;

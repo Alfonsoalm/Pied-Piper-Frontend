@@ -26,3 +26,5 @@ export { Logout } from "../components/0_common/Logout.jsx";
 export { MyOffers } from "../components/0_common/MyOffers.jsx";
 export { Home } from "../components/0_layout/Home.jsx";
 export { VerifiedSuccess } from '../components/0_layout/VerifySuccess';
+export { ForgotPassword } from '../components/0_layout/ForgotPassword';
+export { ResetPassword } from '../components/0_layout/ResetPassword';

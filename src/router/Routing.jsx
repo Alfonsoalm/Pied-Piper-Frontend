@@ -1,5 +1,5 @@
 import * as Imports from './imports';
-const { React, BrowserRouter, AuthProvider, Routes, Route, Link, PublicLayout, Login, 
+const { React, BrowserRouter, AuthProvider, Routes, Route, Link, PublicLayout, Login, ForgotPassword, ResetPassword,
   Home, Register,  ProfessRegister, CompanyRegister, VerifiedSuccess, PrivateLayout, Feed, Offers,
   CompanySectors, CompanyList, ProfessProfiles, ProfessList, Messages, MyOffers, People, 
   Profile, CompanyProfile, ProfessProfile, Config, Following, Followers, Logout
@@ -19,6 +19,8 @@ export const Routing = () => {
             <Route path="/registro/profesional" element={<ProfessRegister/>} /> 
             <Route path="/registro/empresa" element={<CompanyRegister />} /> 
             <Route path="/verified-success" element={<VerifiedSuccess />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
           </Route>
 
           <Route path="/social" element={<PrivateLayout />}>
@@ -31,7 +33,6 @@ export const Routing = () => {
             <Route path="profiles/:profession" element={<ProfessList />} />
             <Route path="messages" element={<Messages />} />
             <Route path="myOffers" element={<MyOffers />} />
-
             <Route path="gente" element={<People />} />
             <Route path="perfil/:userId" element={<Profile />} /> 
             <Route path="perfil/empresa/:userId" element={<CompanyProfile />} /> 
