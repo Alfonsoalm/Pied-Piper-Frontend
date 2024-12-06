@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Global } from "../../helpers/Global.jsx";
+import avatar from "../../assets/img/user.png";
+
 
 export const CompanyProfile = () => {
   const [company, setCompany] = useState(null);

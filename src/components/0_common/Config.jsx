@@ -14,30 +14,31 @@ export const Config = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     let newData = SerializeForm(e.target);
+    console.log("newData",newData.file0);
 
-    if (auth.legal_id) {
-      newData.sectors = sectors;
-    } else {
-      newData.professions = professions;
-      newData.birth_date = birthDate;
-      newData.location = location;
-      newData.professional_info = {
-        preferred_locations: preferredLocations,
-        distance_range_km: distanceRange,
-        work_preference: workPreference,
-        experience_years: yearsExperience,
-        knowledge_areas: knowledgeAreas,
-        salary_range: [
-          parseFloat(salaryRange.min),
-          parseFloat(salaryRange.max),
-        ],
-        schedule_preference: schedulePreference,
-        custom_schedule:
-          schedulePreference === "custom" ? customSchedule : null,
-        titles: titles,
-        courses: courses,
-      };
-    }
+    // if (auth.legal_id) {
+    //   newData.sectors = sectors;
+    // } else {
+    //   newData.professions = professions;
+    //   newData.birth_date = birthDate;
+    //   newData.location = location;
+    //   newData.professional_info = {
+    //     preferred_locations: preferredLocations,
+    //     distance_range_km: distanceRange,
+    //     work_preference: workPreference,
+    //     experience_years: yearsExperience,
+    //     knowledge_areas: knowledgeAreas,
+    //     salary_range: [
+    //       parseFloat(salaryRange.min),
+    //       parseFloat(salaryRange.max),
+    //     ],
+    //     schedule_preference: schedulePreference,
+    //     custom_schedule:
+    //       schedulePreference === "custom" ? customSchedule : null,
+    //     titles: titles,
+    //     courses: courses,
+    //   };
+    // }
 
     const file = newData.file0 instanceof File ? newData.file0 : null;
     if (file) delete newData.file0;

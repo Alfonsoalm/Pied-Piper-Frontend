@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Global } from "../../helpers/Global.jsx";
-import { UserList } from "./UserList.jsx";
+import { UserList } from "../0_common/UserList.jsx";
 
 export const People = () => {
 
