@@ -1,7 +1,8 @@
 .sectors-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 26px;
   }
   
   .sector-card {

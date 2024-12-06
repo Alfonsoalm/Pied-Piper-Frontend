@@ -40,7 +40,7 @@ export const sectors_list = [
     "Producción Audiovisual y Cinematografía",
     "Ciberseguridad",
     "E-commerce y Marketplaces",
-    "Mantenimiento y Limpieza",
+    "Servicios de Mantenimiento y Limpieza",
     "Muebles y Decoración",
     "Servicios Funerarios y Memoriales",
     "Servicios de Catering y Restauración",

@@ -1,9 +1,7 @@
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Global } from "../../helpers/Global.jsx";
 import avatar from "../../assets/img/user.png";
-
 
 export const CompanyProfile = () => {
   const [company, setCompany] = useState(null);
@@ -39,27 +37,48 @@ export const CompanyProfile = () => {
   }
 
   return (
-    <div className="profile-info__company">
-      <h2>Información de la Empresa</h2>
-      <div className="general-info__container-avatar">
-        {company.image && company.image !== "default.png" ? (
+    <div className="profile-container">
+      {/* SECCIÓN PRINCIPAL */}
+      <div className="profile-header">
+        <div className="background-banner"></div>
+        <div className="avatar-container">
+          {company.image && company.image !== "default.png" ? (
             <img
-            src={Global.url + "user/avatar/" + company.image}
-            className="container-avatar__img"
-            alt="Foto de perfil"
+              src={Global.url + "user/avatar/" + company.image}
+              className="profile-avatar"
+              alt="Foto de perfil"
             />
-        ) : (
+          ) : (
             <img
-            src={avatar}
-            className="container-avatar__img"
-            alt="Foto de perfil"
+              src={avatar}
+              className="profile-avatar"
+              alt="Foto de perfil"
             />
-        )}
+          )}
+        </div>
+        <div className="profile-info">
+          <h1 className="profile-name">{company.name || "N/A"}</h1>
+          <p className="profile-sectors">
+            {company.sectors?.join(", ") || "Sin sectores registrados"}
+          </p>
+          <p className="profile-location">{company.location || "Ubicación no especificada"}</p>
+        </div>
       </div>
-      <p><strong>Sectores:</strong> {company.sectors?.join(", ") || "N/A"}</p>
-      <p><strong>Ubicación:</strong> {company.location || "N/A"}</p>
-      <p><strong>Sitio Web:</strong> {company.website || "N/A"}</p>
-      <p><strong>Descripción:</strong> {company.description || "N/A"}</p>
+
+      {/* SECCIÓN DE DETALLES */}
+      <div className="profile-details-section">
+        <h2>Información de la Empresa</h2>
+        <p><strong>Sitio Web:</strong>{" "}
+          {company.website ? (
+            <a href={company.website} target="_blank" rel="noopener noreferrer">
+              {company.website}
+            </a>
+          ) : (
+            "N/A"
+          )}
+        </p>
+        <p><strong>Descripción:</strong> {company.description || "N/A"}</p>
+      </div>
     </div>
   );
 };
