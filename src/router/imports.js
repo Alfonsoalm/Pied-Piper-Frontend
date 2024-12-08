@@ -23,7 +23,7 @@ export { Profile } from "../components/0_layout/Profile.jsx";
 export { Offers } from "../components/0_layout/Offers.jsx";
 export { Messages } from "../components/0_layout/Messages.jsx";
 export { Logout } from "../components/0_common/Logout.jsx";
-export { MyOffers } from "../components/0_layout/MyOffers.jsx";
+export { Proposals } from "../components/0_layout/Proposals.jsx";
 export { Home } from "../components/0_layout/Home.jsx";
 export { VerifiedSuccess } from '../components/0_layout/VerifySuccess';
 export { ForgotPassword } from '../components/0_layout/ForgotPassword';

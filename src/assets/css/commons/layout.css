@@ -3,10 +3,11 @@
     --general-text-color: #333;
     --navbar-background-color: #131a5c;
 
-    --success-btn-border-color: #4cae4c;
-    --success-btn-border-hover-color: #398439;
-    --success-btn-background-color: #0a0e0a;
-    --success-btn-background-hover-color: #449d44;
+    --follow-btn-border-color: #000000;
+    --unfollow-btn-border-color: #000000;
+    --follow-btn-background-color: #1756cc;
+    --unfollow-btn-background-color: #17cc2f;
+    --follow-btn-background-hover-color: #388fdb;
 
     --delete-btn-border-color: #d43f3a;
     --delete-btn-border-hover-color: #ac2925;

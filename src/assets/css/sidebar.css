@@ -133,11 +133,11 @@
 }
 
 .form-post__btn-submit{
-    background-color: var(--success-btn-background-color);
+    background-color: var(--follow-btn-background-color);
     color: var( --white-color) !important;
     padding: 0.2rem 0.7rem;
     margin: 0.2rem;
-    border: 1px solid var(--success-btn-border-color);
+    border: 1px solid var(--follow-btn-border-color);
     border-radius: 0.3rem;
     line-height: 1.5;
     cursor: pointer;

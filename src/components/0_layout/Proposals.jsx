@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Global } from "../../helpers/Global";
 import useAuth from "../../hooks/useAuth";
 
-export const MyOffers = () => {
+export const Proposals = () => {
   const { auth } = useAuth(); // Obtener el usuario autenticado
   const [offers, setOffers] = useState([]);
   const [loading, setLoading] = useState(true);

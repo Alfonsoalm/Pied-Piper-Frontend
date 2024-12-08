@@ -13,6 +13,7 @@ import './assets/css/commons/header.css';
 import './assets/css/commons/config.css';
 import './assets/css/commons/home.css';
 import './assets/css/commons/login.css';
+import './assets/css/commons/messages.css';
 import "./assets/css/register.css";
 import './assets/css/publicLayout.css';
 import './assets/css/privateLayout.css';

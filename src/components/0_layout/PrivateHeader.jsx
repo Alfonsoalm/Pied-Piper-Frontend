@@ -32,6 +32,12 @@ export const Header = () => {
             </NavLink>
           </li>
           <li className="menu-list__item">
+            <NavLink to="/social/myOffers" className="menu-list__link">
+              <i className="fa-solid fa-envelope-open-text navbar__icon"></i>
+              <span className="menu-list__title">Propuestas</span>
+            </NavLink>
+          </li>
+          <li className="menu-list__item">
             <NavLink to="/social/sectors" className="menu-list__link">
               <i className="fa-solid fa-building navbar__icon"></i>
               <span className="menu-list__title">Sectores</span>
@@ -47,12 +53,6 @@ export const Header = () => {
             <NavLink to="/social/messages" className="menu-list__link">
               <i className="fa-solid fa-envelope navbar__icon"></i>
               <span className="menu-list__title">Mensajes</span>
-            </NavLink>
-          </li>
-          <li className="menu-list__item">
-            <NavLink to="/social/myOffers" className="menu-list__link">
-              <i className="fa-solid fa-envelope-open-text navbar__icon"></i>
-              <span className="menu-list__title">Mis Ofertas</span>
             </NavLink>
           </li>
           <li className="menu-list__item">

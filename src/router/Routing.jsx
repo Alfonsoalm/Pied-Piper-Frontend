@@ -1,7 +1,7 @@
 import * as Imports from './imports';
 const { React, BrowserRouter, AuthProvider, Routes, Route, Link, PublicLayout, Login, ForgotPassword, ResetPassword,
   Home, Register,  ProfessRegister, CompanyRegister, VerifiedSuccess, PrivateLayout, Feed, Offers,
-  CompanySectors, CompanyList, ProfessProfiles, ProfessList, Messages, MyOffers, People, 
+  CompanySectors, CompanyList, ProfessProfiles, ProfessList, Messages, Proposals, People, 
   Profile, CompanyProfile, ProfessProfile, Config, Following, Followers, Logout
  } = Imports;
 
@@ -32,7 +32,7 @@ export const Routing = () => {
             <Route path="profiles" element={<ProfessProfiles />} />
             <Route path="profiles/:profession" element={<ProfessList />} />
             <Route path="messages" element={<Messages />} />
-            <Route path="myOffers" element={<MyOffers />} />
+            <Route path="myOffers" element={<Proposals />} />
             <Route path="gente" element={<People />} />
             <Route path="perfil/:userId" element={<Profile />} /> 
             <Route path="perfil/empresa/:userId" element={<CompanyProfile />} /> 

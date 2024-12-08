@@ -33,9 +33,8 @@ export const UserList = ({
         Authorization: localStorage.getItem("token"),
       },
     });
-
     const data = await request.json();
-
+    console.log(data);
     // Cuando todo este todo correcto
     if (data.status == "success") {
       // Actualizar estado de following agregando el nuevo follow
@@ -53,16 +52,14 @@ export const UserList = ({
         Authorization: localStorage.getItem("token"),
       },
     });
-
     const data = await request.json();
-
+    console.log(data);
     // Cuando este todo correcto
     if (data.status == "success") {
       // Actualizar estado de following filtrando datos para eliminar el antiguo follow
       let filterFollowings = following.filter(
         (followingUserId) => userId !== followingUserId
       );
-
       setFollowing(filterFollowings);
     }
   };
@@ -125,14 +122,14 @@ export const UserList = ({
                 <div className="post__buttons">
                   {!following.includes(user._id) && (
                     <button
-                      className="post__button post__button--green"
+                      className="post__button post__button--follow"
                       onClick={() => follow(user._id)}>
                       Seguir
                     </button>
                   )}
                   {following.includes(user._id) && (
                     <button
-                      className="post__button"
+                      className="post__button post__button--unfollow"
                       onClick={() => unfollow(user._id)}>
                       Dejar de seguir
                     </button>
