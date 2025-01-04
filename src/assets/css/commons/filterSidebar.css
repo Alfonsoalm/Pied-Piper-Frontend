@@ -1,0 +1,91 @@
+.layout__aside {
+    grid-area: aside;
+    padding: 1.5rem;
+    border-right: 1px solid #ddd;
+    background-color: var(--color-background);
+    height: auto; /* Ajusta la altura del sidebar */
+    margin-top: 6rem; /* Compensar la altura del header fijo */
+    position: sticky;
+    top: 0;
+}
+
+.layout__aside h2 {
+
+    font-size: 3.8rem;
+    color: #343a40;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .filter-sidebar-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 20px;
+  }
+  
+  .filter-sidebar-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filter-sidebar-label {
+    font-size: 1.6rem; /* Más grande */
+    font-weight: bold; /* Resaltado */
+    margin-bottom: 5px;
+    color: #495057; /* Gris oscuro */
+  }
+  
+  .filter-sidebar-input,
+  .filter-sidebar-select {
+    font-size: 1.2rem; /* Más grande */
+    padding: 10px;
+    font-size: 1rem; /* Tamaño de fuente ligeramente mayor */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .filter-sidebar-input:focus,
+  .filter-sidebar-select:focus {
+    outline: none;
+    border-color: #007bff; /* Azul en foco */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  }
+  
+  .filter-sidebar-input::placeholder {
+    font-size: 1.2rem; /* Más grande */
+    color: #adb5bd; /* Placeholder gris claro */
+
+  }
+  
+  .filter-sidebar-select {
+    background-color: #fff;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .filter-sidebar-select option {
+    font-size: 1rem;
+  }
+  
+  .filter-sidebar-form-group select:focus {
+    background-color: #f8f9fa;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
