@@ -151,14 +151,17 @@ export const Messages = () => {
     <div className="messages-container">
       <header className="content__header">
         <h1 className="content__title">Mensajes</h1>
-        <input
-          type="text"
-          placeholder="Buscar por nombre o apellido..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-bar"
-        />
       </header>
+
+      <div className="search-bar-container">
+        <input
+            type="text"
+            placeholder="Buscar por nombre o apellido..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-bar"
+        />
+      </div>
 
       <div className="messages-layout">
         <aside className="conversations-sidebar">
@@ -167,7 +170,7 @@ export const Messages = () => {
             {filteredItems.map((item) => (
               <li
                 key={item._id}
-                className={selectedUser === item._id ? "active" : ""}
+                className={`conversation-item ${selectedUser === item._id ? "active" : ""}`}
                 onClick={() => fetchMessages(item._id)}
               >
                 <img

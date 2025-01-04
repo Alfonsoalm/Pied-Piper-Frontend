@@ -1,19 +1,46 @@
+/* General container styles */
 .messages-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
+  font-size: 1.6rem; /* Aumentar tamaño general del texto */
 }
 
+/* Layout styles */
 .messages-layout {
   display: flex;
-  height: calc(100% - 60px);
+  height: calc(100% - 120px); /* Ajuste para incluir el título y la barra de búsqueda */
 }
 
+/* Search bar styles */
+.search-bar-container{
+  margin-bottom: 30px; /* Espaciado con el título */
+}
+
+.search-bar {
+  font-size: 2rem; /* Aumentar tamaño del texto */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  height: 50px;
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+.search-bar::placeholder{
+  font-size: 2rem; /* Aumentar tamaño del texto */
+}
+
+/* Sidebar styles */
 .conversations-sidebar {
   width: 30%;
   border-right: 1px solid #ddd;
   overflow-y: auto;
+}
+
+.conversations-sidebar h2 {
+  font-size: 2.4rem; /* Tamaño del título en la barra lateral */
+  margin-bottom: 10px;
 }
 
 .conversations-sidebar ul {
@@ -22,21 +49,22 @@
   margin: 0;
 }
 
-.conversations-sidebar li {
+.conversation-item {
   display: flex;
   align-items: center;
   padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1.4rem; /* Aumentar el tamaño del texto */
+  transition: background-color 0.3s ease;
 }
 
-.conversations-sidebar li.active {
-  background-color: #f0f8ff;
+.conversation-item.active {
+  background-color: #f0f8ff; /* Resaltar conversación activa */
 }
 
 .conversation-avatar {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -48,14 +76,15 @@
 
 .conversation-name {
   font-weight: bold;
-  margin: 0;
+  font-size: 1.8rem; /* Aumentar tamaño del nombre */
 }
 
 .conversation-preview {
-  font-size: 0.9em;
+  font-size: 1.4rem; /* Aumentar tamaño del texto de vista previa */
   color: #555;
 }
 
+/* Main chat area */
 .messages-main {
   flex: 1;
   display: flex;
@@ -82,6 +111,7 @@
   margin-bottom: 10px;
   border-radius: 10px;
   word-wrap: break-word;
+  font-size: 1.8rem; /* Ajustar tamaño del texto de los mensajes */
 }
 
 .message-sent {
@@ -110,6 +140,7 @@
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 1.6rem; /* Ajustar tamaño del texto */
 }
 
 .message-input-container button {
@@ -120,7 +151,8 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1.6rem; /* Ajustar tamaño del texto */
+  transition: background-color 0.3s ease;
 }
 
 .message-input-container button:hover {
