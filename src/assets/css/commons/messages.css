@@ -62,11 +62,18 @@
   flex-direction: column;
 }
 
+.messages-main p {
+  margin-left: 20px;
+}
+
 .messages-list {
   flex: 1;
   overflow-y: auto;
   padding: 10px;
   background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaciado entre mensajes */
 }
 
 .message-item {
@@ -79,12 +86,16 @@
 
 .message-sent {
   align-self: flex-end;
-  background-color: #d1ffd1;
+  background-color: #d1ffd1; /* Verde claro */
+  text-align: right;
+  border-radius: 10px 10px 0 10px;
 }
 
 .message-received {
   align-self: flex-start;
-  background-color: #f1f1f1;
+  background-color: #f1f1f1; /* Gris claro */
+  text-align: left;
+  border-radius: 10px 10px 10px 0;
 }
 
 .message-input-container {
@@ -109,4 +120,9 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.message-input-container button:hover {
+  background-color: #0056b3;
 }
