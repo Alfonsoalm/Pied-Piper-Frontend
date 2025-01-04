@@ -1,108 +1,109 @@
 .offers-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40%, 2fr)); /* Tarjetas ocupan 30% */
-    gap: 20px;
-
-    padding: 20px;
-  }
-  
-  .offer-card {
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    color: var(--black-color);
-    background-color: var(--white-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .offer-card:hover {
-    color: var(--black-color);
-    outline: 2px solid var(--navbar-background-color);
-    outline-offset: -5px; /* Hace que el borde se meta dentro del botón */
-    background-color: var(--white-color); /* Mantén el fondo sin cambios */
-  }
-  
-  .offer-card h2 {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
-  }
-  
-  .offer-card p {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .offer-conditions {
-    width: 100%; /* La tabla ocupa todo el ancho de la tarjeta */
-    border-collapse: collapse; /* Quita los bordes dobles entre las celdas */
-    margin: 15px 0; /* Espaciado superior e inferior */
-  }
-  
-  .offer-conditions td {
-    color: var(--black-color);
-    padding: 10px 5px; /* Espaciado interno en las celdas */
-    border-bottom: 1px solid #ccc; /* Línea divisoria entre filas */
-    font-size: 1.6rem; /* Tamaño de texto */
-    vertical-align: top; /* Alineación vertical superior */
-  }
-
-  .table-title {
-    width: 100%;
-    font-size: 1.8rem; /* Tamaño del título */
-    font-weight: bold; /* Negrita para destacar */
-    text-align: center; /* Alineación del texto */
-    caption-side: top; /* Posiciona el título en la parte superior de la tabla */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40%, 2fr)); /* Tarjetas ocupan 40% */
+  gap: 20px;
+  padding: 20px;
 }
-  
-  .offer-conditions td:first-child {
-    font-weight: bold; /* Resalta la primera columna */
-    color: var(--black-color); /* Color más claro para títulos */
-    width: 40%; /* Ancho fijo para la primera columna */
-  }
-  
-  .offer-conditions td:last-child {
-    text-align: left; /* Alineación izquierda para los valores */
-  }
-  
-  .offer-time-limit {
-    padding: 10px;
-    font-size: 1.3rem; /* Texto ligeramente más grande */
-    margin-top: 20px;
-    margin-bottom: 1px;
-    text-align: center;
-    color: var(--black-color);
-    outline: 2px solid var(--navbar-background-color);
-    outline-offset: -5px; /* Hace que el borde se meta dentro del botón */
-    background-color: var(--white-color);
-    border-radius: 20px; /* Bordes redondeados */
-  }
-  
-  .offer-buttons {
 
-    display: flex;
-    justify-content: space-between; /* Espacio uniforme entre botones */
-    margin-top: 15px;
-  }
-  
-  .reject-btn, .accept-btn, .counteroffer-btn {
-    margin-top: 0px;
-    width: 110px;
-    height: 50px;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 10px;
-    background-color: var(--navbar-background-color);
-    color: var(--white-color);
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .reject-btn:hover, .accept-btn:hover, .counteroffer-btn:hover {
-    color: var(--white-color);
-    outline: 2px solid var(--white-color);
-    outline-offset: -5px; /* Hace que el borde se meta dentro del botón */
-    background-color: var(--navbar-background-color); /* Mantén el fondo sin cambios */
-  }
-  
-  
+.offer-card {
+  display: flex;
+  flex-direction: column; /* Elementos alineados en columna */
+  justify-content: space-between; /* Espaciado entre elementos */
+  height: 100%; /* Ocupa toda la altura disponible */
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: var(--black-color);
+  background-color: var(--white-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.offer-card:hover {
+  color: var(--black-color);
+  outline: 2px solid var(--navbar-background-color);
+  outline-offset: -5px;
+  background-color: var(--white-color);
+}
+
+.offer-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.offer-card p {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.offer-conditions {
+  width: 100%; /* La tabla ocupa todo el ancho de la tarjeta */
+  border-collapse: collapse; /* Quita los bordes dobles entre las celdas */
+  margin: 15px 0; /* Espaciado superior e inferior */
+}
+
+.offer-conditions td {
+  color: var(--black-color);
+  padding: 10px 5px; /* Espaciado interno en las celdas */
+  border-bottom: 1px solid #ccc; /* Línea divisoria entre filas */
+  font-size: 1.6rem; /* Tamaño de texto */
+  vertical-align: top; /* Alineación vertical superior */
+}
+
+.table-title {
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  caption-side: top; /* Título en la parte superior */
+}
+
+.offer-conditions td:first-child {
+  font-weight: bold;
+  color: var(--black-color);
+  width: 40%;
+}
+
+.offer-conditions td:last-child {
+  text-align: left;
+}
+
+.offer-time-limit {
+  padding: 10px;
+  font-size: 1.3rem; /* Texto ligeramente más grande */
+  margin-top: auto; /* Empuja el elemento hacia abajo */
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--black-color);
+  outline: 2px solid var(--navbar-background-color);
+  outline-offset: -5px; /* Hace que el borde se meta dentro del botón */
+  background-color: var(--white-color);
+  border-radius: 20px; /* Bordes redondeados */
+  display: inline-block; /* Asegura que sea un bloque alineado */
+  width: 100%; /* Ancho completo dentro de la tarjeta */
+}
+
+.offer-buttons {
+  display: flex;
+  justify-content: space-between; /* Espacio uniforme entre botones */
+  gap: 10px; /* Espaciado entre botones */
+}
+
+.reject-btn, .accept-btn, .counteroffer-btn {
+  width: 110px;
+  height: 50px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: var(--navbar-background-color);
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reject-btn:hover, .accept-btn:hover, .counteroffer-btn:hover {
+  color: var(--white-color);
+  outline: 2px solid var(--white-color);
+  outline-offset: -5px;
+  background-color: var(--navbar-background-color);
+}
